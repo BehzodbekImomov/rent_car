@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .about_work {
   padding: 42px 65px 105px;
   .work_content {
@@ -25,18 +32,36 @@
   }
   .work_boxs {
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 60px 0 ;
     li {
       width: 276.484px;
       height: 250.751px;
-      flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       h4{
         color: var(--black);
         padding-top:30px ;
@@ -49,6 +74,8 @@ line-height: 150%; /* 36px */
 letter-spacing: -0.48px;
       }
       p{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
 padding-top: 18px;
 
@@ -65,15 +92,22 @@ letter-spacing: -0.28px;
      
         width: 106px;
         height: 106px;
-        flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
         border-radius: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         background: #fff7df;
 
         img {
-          // z-index: 10;
+        
         }
       }
     }

@@ -1,24 +1,43 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 nav {
   background-color: var(--dark);
   padding: 27px 68px 30px;
   .navigations {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     .menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 38px;
-      // padding: 31px 0;
+     
 
       li {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         &:hover li a::after {
           width: 100%;
         }
         a {
-          // position: relative;
+          
           font-family: "Plus Jakarta Sans";
           font-size: 16px;
           font-style: normal;
@@ -29,6 +48,8 @@ nav {
 
           &:hover {
             opacity: 0.75;
+            -webkit-transition: all 0.3s ease-in;
+            -o-transition: all 0.3s ease-in;
             transition: all 0.3s ease-in;
           }
         }
@@ -45,8 +66,12 @@ nav {
       }
       .registr {
         a {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
           gap: 18px;
         }
       }
@@ -59,5 +84,5 @@ nav {
   height: 21px;
   opacity: 0.8;
   background: #fec31d;
-  // display: inline-flex;
+ 
 }

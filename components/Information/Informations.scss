@@ -1,15 +1,27 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .informations {
   padding: 70px 60px 90px;
   background-color: var(--white);
   .info {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
+  
 
     .info_title {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       width: 530px;
       margin: 0 auto;
       h3 {
@@ -34,22 +46,37 @@
       }
     }
     .info_content {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       gap: 100px;
-      justify-content: flex-start;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
       ul {
         li {
           width: 510px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           gap: 25px;
           .info_box {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             width: 51.452px;
             height: 51.452px;
-            flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
             border-radius: 10px;
             background: #fec31d;
           }
