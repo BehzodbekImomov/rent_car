@@ -1,0 +1,26 @@
+.cars{
+    background-color: var(--black);
+    .cars_content{
+        padding: 103px 390px 50px ;
+h3{
+    color: var(--yellow);
+text-align: center;
+font-family: "Plus Jakarta Sans";
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 72px */
+letter-spacing: -0.96px;
+}
+p{
+    padding: 18px ;
+    color: var(--white);
+text-align: center;
+font-family: "Plus Jakarta Sans";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+}
+    }
+}

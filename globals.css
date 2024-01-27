@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --dark:#000;
+  --black:#1A202C;
+  --white:#FFF;
+  --gray:#F6F7F9;
+  --gray2:#F3F3F3;
+  --yellow:#FEC31D;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.container_custom{
+  max-width: 1440px;
+  margin: 0 auto;
+  /* padding: 30px 50px; */
+}
+button{
+  cursor: pointer;
+}
+.mui-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root::before{
+  /* content: "" !important; */
+  border-bottom: none !important;
+}

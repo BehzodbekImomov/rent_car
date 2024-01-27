@@ -1,0 +1,63 @@
+nav {
+  background-color: var(--dark);
+  padding: 27px 68px 30px;
+  .navigations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu {
+      display: flex;
+      gap: 38px;
+      // padding: 31px 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        &:hover li a::after {
+          width: 100%;
+        }
+        a {
+          // position: relative;
+          font-family: "Plus Jakarta Sans";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 24px */
+          letter-spacing: -0.48px;
+          color: var(--white);
+
+          &:hover {
+            opacity: 0.75;
+            transition: all 0.3s ease-in;
+          }
+        }
+        button {
+          padding: 7.5px 21px;
+          font-family: "Plus Jakarta Sans";
+          color: var(--black);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 21px */
+          letter-spacing: -0.42px;
+        }
+      }
+      .registr {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+        }
+      }
+    }
+  }
+}
+
+.line {
+  width: 1px;
+  height: 21px;
+  opacity: 0.8;
+  background: #fec31d;
+  // display: inline-flex;
+}

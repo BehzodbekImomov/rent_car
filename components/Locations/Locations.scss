@@ -1,0 +1,157 @@
+
+.loc{
+  background-color: var(--grey);
+  height: 155px;
+
+  .location {
+    display: flex;
+    justify-content: center;
+
+    .location_content {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 858px;
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      .line {
+        width: .5px;
+        height: 72px;
+        background-color: var(--yellow);
+      }
+      .box {
+        ul {
+          display: flex;
+          gap: 24px;
+          padding: 0 60px 28px 48px;
+          h5 {
+            color: var(--black);
+            padding-bottom: -12px !important;
+            /* Bold/Type@16 */
+            font-family: "Plus Jakarta Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 24px */
+            letter-spacing: -0.32px;
+          }
+        }
+      }
+
+      .pick {
+        width: 665.044px;
+        height: 156px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: var(--grey2);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        border-bottom-right-radius: 0;
+        .pick_up {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 24px 0 16px 48px;
+          h4 {
+            display: flex;
+            color: var(--black);
+
+            /* Semibold/Type@16 */
+            font-family: "Plus Jakarta Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%; /* 24px */
+            letter-spacing: -0.32px;
+            flex-direction: column;
+            justify-content: center;
+          }
+          div {
+            width: 16px;
+            height: 16px;
+            // padding: 4px;
+            display: flex;
+            // padding: 4px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 70px;
+            background: var(--yellow);
+            .img {
+              width: 8px;
+              height: 8px;
+              border-radius: 100%;
+              background: var(--white);
+              border: none;
+            }
+          }
+        }
+      }
+
+      .drop {
+        width: 781.761px;
+        height: 156px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: var(--grey2);
+        border-left: none;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        border-bottom-left-radius: 0;
+        ul {
+          padding: 0 48px 28px 75px;
+        }
+        .drop_off {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 24px 0 16px 75px;
+          h4 {
+            display: flex;
+            color: var(--black);
+
+            /* Semibold/Type@16 */
+            font-family: "Plus Jakarta Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%; /* 24px */
+            letter-spacing: -0.32px;
+            flex-direction: column;
+            justify-content: center;
+          }
+          div {
+            width: 16px;
+            height: 16px;
+            // padding: 4px;
+            display: flex;
+            // padding: 4px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 70px;
+            background: var(--yellow);
+            .img {
+              width: 8px;
+              height: 8px;
+              border-radius: 70px;
+              background: var(--white);
+              border: none;
+            }
+          }
+          .btn {
+            padding: 46px 48px;
+            .search_btn {
+              color: var(--white) !important;
+              text-align: center;
+
+              /* Semibold/Type@16 */
+              font-family: "Plus Jakarta Sans";
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 150%; /* 24px */
+              letter-spacing: -0.32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
