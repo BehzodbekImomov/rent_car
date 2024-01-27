@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .mui-1wf8b0h-MuiTabs-flexContainer{
-    justify-content: space-around !important;
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
 }
 .mui-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
     color: var(--yellow) !important;
