@@ -3,7 +3,7 @@ import "./Cars.scss";
 
 const Cars = () => {
   return (
-    <section className="cars">
+    <section className="cars" id="brands">
       <div className="container_custom">
         <div className="cars_content">
           <h3>Most popular car rental deals</h3>

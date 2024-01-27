@@ -6,7 +6,7 @@ import "./Informations.scss";
 
 export default function Informations() {
   return (
-    <section className="informations">
+    <section className="informations" id="choose">
       <div className="container_custom info">
         <div className="info_title">
           <h3>Why choose us</h3>

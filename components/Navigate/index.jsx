@@ -7,37 +7,37 @@ import "./Navigate.scss";
 const Navigate = () => {
   return (
     <nav>
-      <div className="container_custom navigations">
+      <div className="container_custom navigations ">
         <Link className="logo" href="/">
           <Image src="/images/logo.png" height={44} width={98} alt=""/>
         </Link>
         <ul className="menu">
           <li>
             {" "}
-            <Link className="anchor" href="/">Home</Link>
+            <a className="anchor" href="/">Home</a>
           </li>
           <li>
-            <Link className="anchor" href="/">Rental Detals</Link>
+            <a className="anchor" href="#rental">Rental Detals</a>
           </li>
           <li>
-            <Link className="anchor" href="/">Why Choose Us</Link>
+            <a className="anchor" href="#choose">Why Choose Us</a>
           </li>
           <li>
-            <Link className="anchor" href="/">Testimonial</Link>
+            <a className="anchor" href="#testmonial">Testimonial</a>
           </li>
           <li>
             {" "}
-            <Link className="anchor" href="/">
+            <a className="anchor" href="#brands">
               Brands{" "}
            <Image src='/svg/vector.svg' width={15} height={6} alt=""/>
-            </Link>
+            </a>
           </li>
           <li className="registr">
-            <Link className="anchor" href="/">
+            <a className="anchor" href="/">
               {" "}
               <div className="line"></div>
               Register
-            </Link>
+            </a>
           </li>
           <li><Button type="submit">Log In</Button></li>
         </ul>

@@ -1,9 +1,15 @@
+"use client";
 import { Button } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./Popular_car.scss";
+import CustomizedRating from "../Rating";
 export default function Popular_car() {
+  const [isRed, setIsRed] = useState(false);
+  const like = (id) => {
+    setIsRed(!isRed);
+  };
   return (
     <div className="card_cars">
       <ul className="popular_car">
@@ -11,7 +17,7 @@ export default function Popular_car() {
           <div className="head_card">
             <p>All New Rush</p>
             {/* <Image src={FavoriteBorderIcon} width alt=""={24} height={24} /> */}
-            <FavoriteBorderIcon style={{ color: "red" }} />
+          <CustomizedRating/>
           </div>
           <div className="food_card">
             <p>
@@ -25,7 +31,7 @@ export default function Popular_car() {
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
           <div className="head_card">
             <p>All New Rush</p>
-            <Image src="/svg/like.svg" alt="" width={24} height={24} />
+            <CustomizedRating/>
           </div>
           <div className="food_card">
             <p>
@@ -39,7 +45,7 @@ export default function Popular_car() {
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
           <div className="head_card">
             <p>All New Rush</p>
-            <Image src="/svg/like.svg" alt="" width={24} height={24} />
+            <CustomizedRating/>
           </div>
           <div className="food_card">
             <p>
@@ -53,7 +59,7 @@ export default function Popular_car() {
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
           <div className="head_card">
             <p>All New Rush</p>
-            <Image src="/svg/like.svg" alt="" width={24} height={24} />
+            <CustomizedRating/>
           </div>
           <div className="food_card">
             <p>
@@ -67,7 +73,7 @@ export default function Popular_car() {
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
           <div className="head_card">
             <p>All New Rush</p>
-            <Image src="/svg/like.svg" alt="" width={24} height={24} />
+            <CustomizedRating/>
           </div>
           <div className="food_card">
             <p>

@@ -3,7 +3,7 @@ import "./About_work.scss";
 
 export default function About_work() {
   return (
-    <section className="about_work">
+    <section className="about_work" id="rental">
       <div className="container_custom">
         <div className="work_content">
           <h3>How it work</h3>
