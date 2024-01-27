@@ -1,3 +1,4 @@
+
 import Tab from "../Tabs";
 import "./Cars.scss";
 
@@ -13,6 +14,7 @@ const Cars = () => {
           </p>
         </div>
         <Tab/>
+       
       </div>
     </section>
   );
