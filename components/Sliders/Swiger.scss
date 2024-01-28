@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .swiper {
   width: 100%;
   height: 340px;
@@ -20,11 +27,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .swiper-slide img {
@@ -32,7 +39,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .swiper-pagination-bullet {
@@ -45,11 +52,11 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 
   opacity: 1;
   background: var(--yellow);
@@ -62,7 +69,6 @@
 }
 
 .swiper-pagination-bullet-active {
- 
   background: var(--yellow);
   width: 45px;
   border-radius: 10px;
@@ -73,25 +79,23 @@
 .swiper-pagination {
   text-align: start;
   margin-top: 82px !important;
- 
 }
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--black); 
+  color: var(--black);
   top: 325px;
 
   &::after {
-    font-size: 30px; 
+    font-size: 30px;
   }
 }
 
 .swiper-button-next {
   right: 100px;
- 
 }
 
 .swiper-button-prev {
-  left: 1200px; 
+  left: 1100px;
 }
 
 .carousel_box {
@@ -105,11 +109,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     p {
       color: #4f5665;
       text-align: center;
@@ -124,8 +128,8 @@
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
       gap: 20px;
 
       .box_circle {
@@ -166,3 +170,4 @@
     line-height: 30px; /* 187.5% */
   }
 }
+
