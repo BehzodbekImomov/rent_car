@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -13,7 +13,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import CategoryIcon from "@mui/icons-material/Category";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({ icon, title,bg_color }) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -31,22 +31,19 @@ export default function TemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 270 ,background:bg_color}}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+      
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem key={1} disablePadding>
+          <ListItemButton>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary={title} />
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider />
       {/* <List>
@@ -65,21 +62,23 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div>
-      {["left"].map((anchor) => (
-        <React.Fragment key={anchor}>
+    <>
+      {["right"].map((anchor) => (
+        <React.Fragment key={anchor} >
           <Button onClick={toggleDrawer(anchor, true)}>
-            <CategoryIcon />
+            {/* <CategoryIcon /> */}
+            {icon}
           </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            
           >
             {list(anchor)}
           </Drawer>
         </React.Fragment>
       ))}
-    </div>
+    </>
   );
 }
