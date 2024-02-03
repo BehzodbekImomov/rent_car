@@ -43,7 +43,7 @@ const Navigate = () => {
               {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
             </a>
           </li>
-          <li className="registr">
+          {/* <li className="registr">
             <a className="anchor" href="/">
               {" "}
               <div className="line"></div>
@@ -52,7 +52,7 @@ const Navigate = () => {
           </li>
           <li>
             <Button type="submit">Log In</Button>
-          </li>
+          </li> */}
         </ul>
 
         <TemporaryDrawer id="burger"
@@ -88,16 +88,7 @@ const Navigate = () => {
                   {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
                 </a>
               </li>
-              <li className="registr">
-                <a className="anchor" href="/">
-                  {" "}
-                  <div className="line"></div>
-                  Register
-                </a>
-              </li>
-              <li>
-                <Button type="submit">Log In</Button>
-              </li>
+          
             </ul>
           }
         />
