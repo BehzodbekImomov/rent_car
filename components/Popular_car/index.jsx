@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@mui/material";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Image from "next/image";
+
+
 import React, { Fragment, useState } from "react";
 import "./Popular_car.scss";
 import CustomizedRating from "../Rating";
