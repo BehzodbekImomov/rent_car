@@ -28,7 +28,7 @@
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: space-evenly;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 22px;
@@ -53,9 +53,7 @@
       justify-content: space-between;
       padding: 30px 27px;
 img{
-  svg{
-    // filter: ;
-  }
+
 }
       p {
         color: var(--Secondary-500, #1a202c);
@@ -139,4 +137,247 @@ img{
   -ms-flex-align: center !important;
   align-items: center !important;
   gap: 8px !important;
+}
+
+@media (max-width:990px) {
+  .card_cars{
+    padding: 40px 1px 80px !important;
+  }
+  .popular_car {
+  
+    gap: 20px;
+
+    padding: 0px 15px 60px;
+    li {
+      width: 280px;
+      height: 368px;
+    background-repeat: no-repeat;
+   object-fit: cover;
+   background-size: 100% 100%;
+      .head_card {
+      
+        padding: 30px 27px;
+
+        p {
+       
+          font-size: 18px;
+    
+        }
+      }
+      .food_card {
+      
+        padding: 208px 24px 27px;
+        p {
+         
+          font-size: 17px;
+       
+        }
+        span {
+        
+          font-size: 13px;
+       
+        }
+        button {
+          color: var(--black);
+          width: 100px;
+          height: 40px;
+  
+          text-align: center;
+  
+          font-size: 12px;
+        
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .card_cars{
+    padding: 40px 1px 80px !important;
+  }
+  .popular_car {
+  
+    gap: 20px;
+
+    padding: 0px 15px 60px;
+    li {
+      width: 220px;
+      height: 348px;
+    
+   object-fit: cover !important;
+   background-size:100% 100% !important;
+      .head_card {
+      
+        padding: 30px 24px;
+
+        p {
+       
+          font-size: 16px;
+    
+        }
+      }
+      .food_card {
+      
+        padding: 208px 24px 27px;
+        p {
+         
+          font-size: 14px;
+       
+        }
+        span {
+        
+          font-size: 10px;
+       
+        }
+        button {
+          color: var(--black);
+          width: 80px;
+          height: 30px;
+  
+          text-align: center;
+  
+          font-size: 8px;
+        
+        }
+      }
+    }
+  }
+  .btn {
+ 
+  
+ 
+    font-size: 14px !important;
+;
+    width: 166px !important;
+    height: 40px !important;
+    padding: 0px 20px !important;
+   
+  }
+}
+
+@media (max-width:576px) {
+  .card_cars{
+    padding: 40px 1px 80px !important;
+  }
+  .popular_car {
+  
+    gap: 10px;
+
+    padding: 0px 0px 60px;
+    li {
+      width: 180px;
+      height: 308px;
+    
+   object-fit: cover !important;
+   background-size:100% 100% !important;
+      .head_card {
+      
+        padding: 30px 18px;
+
+        p {
+       
+          font-size: 13px;
+    
+        }
+      }
+      .food_card {
+      
+        padding: 180px 16px 27px;
+        p {
+         
+          font-size: 12px;
+       
+        }
+        span {
+        
+          font-size: 8px;
+       
+        }
+        button {
+          color: var(--black);
+          width: 60px;
+          height: 20px;
+  
+          text-align: center;
+  
+          font-size: 6px;
+        
+        }
+      }
+    }
+  }
+  .btn {
+ 
+  
+ 
+    font-size: 14px !important;
+;
+    width: 166px !important;
+    height: 40px !important;
+    padding: 0px 20px !important;
+   
+  }
+}
+
+@media (max-width:430px) {
+ 
+  .popular_car {
+  
+    gap: 5px;
+
+    padding: 0px 0px 60px;
+    li {
+      width: 160px;
+      height: 280px;
+    
+   object-fit: cover !important;
+   background-size:100% 100% !important;
+      .head_card {
+      
+        padding: 30px 18px;
+
+        p {
+       
+          font-size: 11px;
+    
+        }
+      }
+      .food_card {
+      
+        padding: 160px 16px 27px;
+        p {
+         
+          font-size: 10px;
+       
+        }
+        span {
+        
+          font-size: 8px;
+       
+        }
+        button {
+          color: var(--black);
+          width: 40px;
+          height: 20px;
+  
+          text-align: center;
+  
+          font-size: 6px;
+        
+        }
+      }
+    }
+  }
+  .btn {
+ 
+  
+ 
+    font-size: 10px !important;
+
+    width: 126px !important;
+    height: 35px !important;
+    padding: 0px 20px !important;
+   
+  }
 }

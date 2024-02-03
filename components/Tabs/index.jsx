@@ -2,12 +2,14 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
 import { useState } from "react";
-import "./Tabs.scss"
 import Popular_car from "../Popular_car";
 import Large_car from "../Large_car";
 import Small_car from "../Small_car";
 import Exclusive_car from "../Exclusive_car";
 import TemporaryDrawer from "../Drawer";
+
+import "./Tabs.scss"
+
 export default function Tabs() {
   const [value, setValue] = useState('1');
   const handleChange = (event, newValue) => {
@@ -38,7 +40,7 @@ export default function Tabs() {
             <Tab label="Exclusive Car" value="4" />
           </TabList>
         </Box>
-        <TemporaryDrawer />
+       
         <TabPanel value="1"><Popular_car/></TabPanel>
         <TabPanel value="2"><Large_car/></TabPanel>
         <TabPanel value="3"><Small_car/></TabPanel>

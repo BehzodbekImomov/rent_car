@@ -57,7 +57,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-
+// display: none;
   opacity: 1;
   background: var(--yellow);
   div {
@@ -97,6 +97,7 @@
 .swiper-button-prev {
   left: 1100px;
 }
+
 
 .carousel_box {
   width: 100%;
@@ -171,3 +172,162 @@
   }
 }
 
+@media (max-width: 990px) {
+  .carousel_box {
+    width: 100%;
+    height: 100%;
+    padding: 20px 13px;
+
+    .card_carousel {
+      p {
+        font-size: 13px;
+      }
+      .card {
+        gap: 20px;
+
+        .box_circle {
+          width: 30px;
+          height: 30px;
+        }
+        .box_title {
+          h4 {
+            font-size: 14px;
+          }
+          span {
+            color: #4f5665;
+            text-align: center;
+            font-family: "Rubik";
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px; /* 214.286% */
+          }
+        }
+      }
+    }
+    .desc_scrool {
+      overflow-y: scroll;
+      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+      height: 120px;
+    }
+    .desc {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      color: #0b132a;
+      font-family: "Rubik";
+      font-size: 14px;
+      scroll-margin-bottom: 70px;
+    }
+  }
+  .swiper-button-next {
+    display: none !important;
+  }
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel_box {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+
+    .card_carousel {
+      p {
+        font-size: 11px;
+      }
+      .card {
+        gap: 15px;
+
+        .box_circle {
+          width: 20px;
+          height: 20px;
+        }
+        .box_title {
+          h4 {
+            font-size: 11px;
+          }
+          span {
+            
+            font-size: 9px;
+           
+          }
+        }
+      }
+    }
+    .desc_scrool {
+      overflow-y: scroll;
+      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+      height: 120px;
+    }
+    .desc {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      color: #0b132a;
+      font-family: "Rubik";
+      font-size: 11px;
+      scroll-margin-bottom: 70px;
+    }
+  }
+  .swiper-button-next {
+    display: none !important;
+  }
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+@media (max-width: 576px) {
+  .swiper_slide{
+    height: 200px !important;
+  }
+  .carousel_box {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+
+    .card_carousel {
+      p {
+        font-size: 11px;
+      }
+      .card {
+        gap: 15px;
+
+        .box_circle {
+          width: 20px;
+          height: 20px;
+        }
+        .box_title {
+          h4 {
+            font-size: 11px;
+          }
+          span {
+            
+            font-size: 9px;
+           
+          }
+        }
+      }
+    }
+    .desc_scrool {
+      overflow-y: scroll;
+      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+      height: 105px;
+    }
+    .desc {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      color: #0b132a;
+      font-family: "Rubik";
+      font-size: 11px;
+      scroll-margin-bottom: 70px;
+    }
+  }
+  .swiper-button-next {
+    display: none !important;
+  }
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+}

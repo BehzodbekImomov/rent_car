@@ -184,5 +184,47 @@ nav {
       height: 30px;
       object-fit: fill;
     }
+  
+  }
+  .menu {
+     padding-top: 50px;
+    gap: 38px;
+    justify-content: center;
+    align-items:center;
+
+    li {
+    
+      &:hover li a::after {
+        width: 100%;
+      }
+      a {
+      
+        font-size: 14px;
+     
+
+        &:hover {
+          opacity: 0.75;
+          -webkit-transition: all 0.3s ease-in;
+          -o-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
+        }
+      }
+      button {
+        padding: 7.5px 21px;
+      
+        font-size: 14px;
+     
+      }
+    }
+    .registr {
+      a {
+    
+        gap: 18px;
+      }
+    }
+  }
+  .mui-16ac5r2-MuiButtonBase-root-MuiListItemButton-root{
+    padding-left: 0 !important;
+    padding-right: 35px !important;
   }
 }

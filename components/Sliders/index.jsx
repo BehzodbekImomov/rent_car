@@ -26,13 +26,39 @@ export default function CarouselCustom() {
     <>
       <Swiper
         pagination={pagination}
-        slidesPerView={3}
-        spaceBetween={30}
+        slidesPerView={1}
+        spaceBetween={10}
         navigation={true}
+        breakpoints={{
+          320:{
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          576:{
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          990: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -44,14 +70,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -63,14 +91,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -82,14 +112,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -101,14 +133,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -120,14 +154,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide style={{ width: "400px", height: "230px" }}>
+        <SwiperSlide className="swiper_slide"  style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
             <div className="card_carousel">
               <div className="card">
@@ -139,13 +175,16 @@ export default function CarouselCustom() {
               </div>
               <p>4.5</p>
             </div>
-            <p className="desc">
-              “Wow... I am very happy to use this VPN, it turned out to be more
-              than my expectations and so far there have been no problems.
-              LaslesVPN always the best”.
-            </p>
+            <div className="desc_scrool">
+              <p className="desc">
+                “Wow... I am very happy to use this VPN, it turned out to be
+                more than my expectations and so far there have been no
+                problems. LaslesVPN always the best”.
+              </p>
+            </div>
           </div>
         </SwiperSlide>
+       
       </Swiper>
     </>
   );

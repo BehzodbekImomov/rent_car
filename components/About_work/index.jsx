@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import "./About_work.scss";
 
 export default function About_work() {
@@ -15,12 +16,16 @@ export default function About_work() {
 
         <ul className="work_boxs">
           <li>
+          <div className="box_img">
+
             <Image
+            
               src="/svg/location.svg"
               alt="logo"
-              width={106}
-              height={106}
+              width={50}
+              height={50}
             />
+          </div>
             <h4>Choose Location</h4>
             <p>
               Aliquam erat volutpat. Integer malesuada turpis id fringilla

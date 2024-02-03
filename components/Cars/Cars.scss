@@ -24,3 +24,77 @@ line-height: 150%; /* 27px */
 }
     }
 }
+@media (max-width:990px) {
+    .cars{
+       
+        .cars_content{
+            padding: 80px 150px 50px ;
+    h3{
+    
+    font-size: 45px;
+
+    }
+    p{
+
+    font-size: 18px;
+   
+    }
+        }
+    }
+}
+@media (max-width:768px) {
+    .cars{
+       
+        .cars_content{
+            padding: 60px 80px 50px ;
+    h3{
+    
+    font-size: 40px;
+
+    }
+    p{
+
+    font-size: 16px;
+   
+    }
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .cars{
+       
+        .cars_content{
+            padding: 40px 60px 50px ;
+    h3{
+    
+    font-size: 36px;
+
+    }
+    p{
+
+    font-size: 14px;
+   
+    }
+        }
+    }
+}
+
+@media (max-width:430px) {
+    .cars{
+       
+        .cars_content{
+            padding: 30px 40px 40px ;
+    h3{
+    
+    font-size: 32px;
+
+    }
+    p{
+
+    font-size: 12px;
+   
+    }
+        }
+    }
+}
