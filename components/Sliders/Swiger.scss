@@ -205,11 +205,11 @@
         }
       }
     }
-    .desc_scrool {
-      overflow-y: scroll;
-      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
-      height: 120px;
-    }
+    // .desc_scrool {
+    //   overflow-y: scroll;
+    //   scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+    //   height: 120px;
+    // }
     .desc {
       padding-top: 6px;
       padding-bottom: 6px;
@@ -256,11 +256,11 @@
         }
       }
     }
-    .desc_scrool {
-      overflow-y: scroll;
-      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
-      height: 120px;
-    }
+    // .desc_scrool {
+    //   overflow-y: scroll;
+    //   scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+    //   height: 120px;
+    // }
     .desc {
       padding-top: 6px;
       padding-bottom: 6px;
@@ -279,10 +279,10 @@
 }
 @media (max-width: 576px) {
   .swiper{
-    height: 280px;
+    height: 380px;
   }
   .swiper_slide{
-    height: 200px !important;
+    height: 280px !important;
   }
   .carousel_box {
     width: 100%;
@@ -312,11 +312,11 @@
         }
       }
     }
-    .desc_scrool {
-      overflow-y: scroll;
-      scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
-      height: 105px;
-    }
+    // .desc_scrool {
+    //   overflow-y: scroll;
+    //   scrollbar-color: rgb(245, 202, 11) rgb(245, 202, 11);
+    //   height: 105px;
+    // }
     .desc {
       padding-top: 6px;
       padding-bottom: 6px;
