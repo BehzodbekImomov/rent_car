@@ -2,6 +2,7 @@ import Image from "next/image";
 import "./Locations.scss";
 import NativeSelectGroup from "../Inputs/Select/NativeSelect";
 import { Button } from "@mui/material";
+import DateTime from "../Inputs/Select/DateTime";
 
 export default function Locations() {
   return (
@@ -24,14 +25,11 @@ export default function Locations() {
                 </li>
                 <div className="line"></div>
                 <li>
-                  <h5>Date</h5>
-                  <NativeSelectGroup name="Select your date" />
+                  <h5>Date time</h5>
+                  <DateTime  slotProps={{ textField: { helperText: 'Please fill this field' } }} name="Select your date" />
                 </li>
                 <div className="line"></div>
-                <li>
-                  <h5>Time</h5>
-                  <NativeSelectGroup name="Select your time" />
-                </li>
+               
               </ul>
             </li>
             <li className="box drop">
@@ -49,14 +47,11 @@ export default function Locations() {
                 </li>
                 <div className="line"></div>
                 <li>
-                  <h5>Date</h5>
-                  <NativeSelectGroup name="Select your date" />
+                  <h5>Date time</h5>
+                  <DateTime name="Select your date" />
                 </li>
                 <div className="line"></div>
-                <li>
-                  <h5>Time</h5>
-                  <NativeSelectGroup name="Select your time" />
-                </li>
+               
                 <div className="btn">
                   <Button
                     variant="contained"

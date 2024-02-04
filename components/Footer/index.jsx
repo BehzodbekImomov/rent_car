@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import './Footer.scss'
+import "./Footer.scss";
 
 export default function Footer() {
   return (
@@ -11,16 +11,18 @@ export default function Footer() {
             <li>
               <Image src="/images/logo.png" width={73} height={33} alt="logo" />
               <p>
-                Our vision is to provide convenience <br /> and help increase your
-                sales business.
+                Our vision is to provide convenience <br /> and help increase
+                your sales business.
               </p>
               <div className="network">
-                <Image
-                  src="/svg/facebook.svg"
-                  width={53}
-                  height={53}
-                  alt="logo"
-                />
+                <a href="https://api.whatsapp.com/send?phone:+971564755115" target="_blank">
+                  <Image
+                    src="/svg/facebook.svg"
+                    width={53}
+                    height={53}
+                    alt="logo"
+                  />
+                </a>
                 <Image
                   src="/svg/twitter.svg"
                   width={53}
