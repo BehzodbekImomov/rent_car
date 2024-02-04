@@ -53,14 +53,14 @@
 }
 @media (max-width: 576px) {
   .swiper {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 250px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
   }
 
   .swiper-slide li {
@@ -96,18 +96,18 @@ span{
 
 @media (max-width: 430px) {
     .swiper {
-      padding-top: 32px;
-      padding-bottom: 32px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
     .swiper-slide {
       background-position: center;
       background-size: cover;
-      width: 200px;
-      height: 250px;
+      width: 270px;
+      height: 320px;
     }
   
     .swiper-slide li {
-      padding: 10px;
+      padding: 20px;
       .head_card {
       
         p{
