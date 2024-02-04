@@ -15,7 +15,7 @@ export default function Footer() {
                 your sales business.
               </p>
               <div className="network">
-                <a href="https://api.whatsapp.com/send?phone:+971564755115" target="_blank">
+                <a href="https://wa.me/971564755115" target="_blank">
                   <Image
                     src="/svg/facebook.svg"
                     width={53}
