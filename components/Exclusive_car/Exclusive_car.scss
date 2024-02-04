@@ -191,66 +191,36 @@
       }
     }
   }
+  @media (min-width:768px) {
+    .card_cars{
+      padding: 40px 1px 80px !important;
+    }
+    .popular_car {
+    display: flex !important;
+      gap: 20px;
   
+   
+    }
+    .custom_swiper{
+      display: none !important;
+    }
+  }
   @media (max-width:768px) {
     .card_cars{
       padding: 40px 1px 80px !important;
     }
     .popular_car {
-    
+    display: none !important;
       gap: 20px;
   
-      padding: 0px 15px 60px;
-      li {
-        width: 220px;
-        height: 348px;
-      
-     object-fit: cover !important;
-     background-size:100% 100% !important;
-        .head_card {
-        
-          padding: 30px 24px;
-  
-          p {
-         
-            font-size: 16px;
-      
-          }
-        }
-        .food_card {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-          padding: 180px 24px 27px;
-          p {
-           
-            font-size: 14px;
-         
-          }
-          span {
-          
-            font-size: 10px;
-         
-          }
-          button {
-            color: var(--black);
-            width:100%;
-            height: 30px;
-    
-            text-align: center;
-    
-            font-size: 8px;
-          
-          }
-        }
-      }
+   
     }
     .btn {
    
     
    
       font-size: 14px !important;
-  ;
+  margin-top: 50px !important;
       width: 166px !important;
       height: 40px !important;
       padding: 0px 20px !important;
@@ -258,129 +228,129 @@
     }
   }
   
-  @media (max-width:576px) {
-    .card_cars{
-      padding: 40px 1px 80px !important;
-    }
-    .popular_car {
+  // @media (max-width:576px) {
+  //   .card_cars{
+  //     padding: 40px 1px 80px !important;
+  //   }
+  //   .popular_car {
     
-      gap: 10px;
+  //     gap: 10px;
   
-      padding: 0px 0px 60px;
-      li {
-        width: 180px;
-        height: 308px;
+  //     padding: 0px 0px 60px;
+  //     li {
+  //       width: 180px;
+  //       height: 308px;
       
-     object-fit: cover !important;
-     background-size:100% 100% !important;
-        .head_card {
+  //    object-fit: cover !important;
+  //    background-size:100% 100% !important;
+  //       .head_card {
         
-          padding: 30px 18px;
+  //         padding: 30px 18px;
   
-          p {
+  //         p {
          
-            font-size: 13px;
+  //           font-size: 13px;
       
-          }
-        }
-        .food_card {
+  //         }
+  //       }
+  //       .food_card {
         
-          padding: 160px 16px 27px;
-          p {
+  //         padding: 160px 16px 27px;
+  //         p {
            
-            font-size: 12px;
+  //           font-size: 12px;
          
-          }
-          span {
+  //         }
+  //         span {
           
-            font-size: 8px;
+  //           font-size: 8px;
          
-          }
-          button {
-            color: var(--black);
-            width: 100%;
-            height: 20px;
+  //         }
+  //         button {
+  //           color: var(--black);
+  //           width: 100%;
+  //           height: 20px;
     
-            text-align: center;
+  //           text-align: center;
     
-            font-size: 6px;
+  //           font-size: 6px;
           
-          }
-        }
-      }
-    }
-    .btn {
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .btn {
    
     
    
-      font-size: 14px !important;
-  ;
-      width: 166px !important;
-      height: 40px !important;
-      padding: 0px 20px !important;
+  //     font-size: 14px !important;
+  // ;
+  //     width: 166px !important;
+  //     height: 40px !important;
+  //     padding: 0px 20px !important;
      
-    }
-  }
+  //   }
+  // }
   
-  @media (max-width:430px) {
+  // @media (max-width:430px) {
    
-    .popular_car {
+  //   .popular_car {
     
-      gap: 5px;
+  //     gap: 5px;
   
-      padding: 0px 0px 60px;
-      li {
-        width: 160px;
-        height: 280px;
+  //     padding: 0px 0px 60px;
+  //     li {
+  //       width: 160px;
+  //       height: 280px;
       
-     object-fit: cover !important;
-     background-size:100% 100% !important;
-        .head_card {
+  //    object-fit: cover !important;
+  //    background-size:100% 100% !important;
+  //       .head_card {
         
-          padding: 30px 18px;
+  //         padding: 30px 18px;
   
-          p {
+  //         p {
          
-            font-size: 11px;
+  //           font-size: 11px;
       
-          }
-        }
-        .food_card {
+  //         }
+  //       }
+  //       .food_card {
         
-          padding: 140px 16px 27px;
-          gap: 6px;
-          p {
+  //         padding: 140px 16px 27px;
+  //         gap: 6px;
+  //         p {
            
-            font-size: 10px;
+  //           font-size: 10px;
          
-          }
-          span {
+  //         }
+  //         span {
           
-            font-size: 8px;
+  //           font-size: 8px;
          
-          }
-          button {
-            color: var(--black);
+  //         }
+  //         button {
+  //           color: var(--black);
            
-            height: 20px;
+  //           height: 20px;
     
-            text-align: center;
+  //           text-align: center;
     
-            font-size: 6px;
+  //           font-size: 6px;
           
-          }
-        }
-      }
-    }
-    .btn {
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .btn {
    
     
    
-      font-size: 10px !important;
+  //     font-size: 10px !important;
   
-      width: 126px !important;
-      height: 35px !important;
-      padding: 0px 20px !important;
+  //     width: 126px !important;
+  //     height: 35px !important;
+  //     padding: 0px 20px !important;
      
-    }
-  }
+  //   }
+  // }

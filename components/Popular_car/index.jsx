@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import "./Popular_car.scss";
 import CustomizedRating from "../Rating";
+import CustomSwiper from "../Sliders/CustomSwiper";
 export default function Popular_car() {
   // const [isRed, setIsRed] = useState(false);
   // const like = (id) => {
@@ -130,6 +131,7 @@ export default function Popular_car() {
           </div>
         </li>
       </ul>
+      <CustomSwiper/>
       <Button
         className="btn"
         variant="text"

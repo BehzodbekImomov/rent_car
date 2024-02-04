@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import "./Large_car.scss";
 import CustomizedRating from "../Rating";
+import CustomSwiper from "../Sliders/CustomSwiper";
 
 export default function Large_car() {
   return (
@@ -127,6 +128,7 @@ export default function Large_car() {
           </div>
         </li>
       </ul>
+      <CustomSwiper/>
       <Button
         className="btn"
         variant="text"
