@@ -14,11 +14,10 @@ export default function DateTime() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={["DateTimePicker", "DateTimePicker"]}>
         <DateTimePicker
-          sx={{ width: "200px" }}
+          sx={{ width: "250px" }}
           label="With Time Clock"
           slotProps={{
             textField: { size: "small" },
-            
           }}
           viewRenderers={{
             hours: renderTimeViewClock,
