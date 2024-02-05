@@ -9,7 +9,8 @@ import Exclusive_car from "../Exclusive_car";
 import TemporaryDrawer from "../Drawer";
 
 import "./Tabs.scss";
-import SVcar from "../SVcar";
+import SVcar from "../Scar";
+import Scar from "../Scar";
 
 export default function Tabs() {
   const [value, setValue] = useState("1");
@@ -56,7 +57,7 @@ export default function Tabs() {
           <Exclusive_car />
         </TabPanel>
         <TabPanel value="5">
-          <SVcar />
+          <Scar />
         </TabPanel>
       </TabContext>
     </Box>

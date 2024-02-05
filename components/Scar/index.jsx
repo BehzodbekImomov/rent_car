@@ -2,12 +2,12 @@
 import { Button } from "@mui/material";
 
 import React, { Fragment, useState } from "react";
-import "./SVcar.scss";
+import "./Scar.scss";
 import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 
-export default function SVcar() {
+export default function Scar() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
