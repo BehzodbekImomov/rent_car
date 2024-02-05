@@ -7,7 +7,7 @@ import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 
-export default function SV_car() {
+export default function SVcar() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
