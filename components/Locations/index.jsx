@@ -28,7 +28,7 @@ export default function Locations() {
                   <h5>Date time</h5>
                   <DateTime  slotProps={{ textField: { helperText: 'Please fill this field' } }} name="Select your date" />
                 </li>
-                <div className="line"></div>
+              
                
               </ul>
             </li>
@@ -50,7 +50,7 @@ export default function Locations() {
                   <h5>Date time</h5>
                   <DateTime name="Select your date" />
                 </li>
-                <div className="line"></div>
+                
                
                 <div className="btn">
                   <Button
