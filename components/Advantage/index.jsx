@@ -1,3 +1,4 @@
+// import CarouselCustom from "../Sliders";
 import CarouselCustom from "../Sliders";
 import "./Advantage.scss";
 
@@ -12,6 +13,7 @@ export default function Advantage() {
             company and website
           </p>
         </div>
+        
         <CarouselCustom/>
       </div>
     </section>

@@ -1,8 +1,24 @@
-
+"use client";
+import { useEffect } from "react";
 import Tab from "../Tabs";
 import "./Cars.scss";
+import { request } from "@/request";
 
 const Cars = () => {
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    try {
+      const res = await request.get("cars?page=1");
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    } finally {
+    }
+  }
+
   return (
     <section className="cars" id="brands">
       <div className="container_custom">
@@ -13,8 +29,8 @@ const Cars = () => {
             company and website
           </p>
         </div>
-        <Tab/>
-       
+
+        <Tab />
       </div>
     </section>
   );

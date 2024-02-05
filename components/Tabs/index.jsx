@@ -8,10 +8,11 @@ import Small_car from "../Small_car";
 import Exclusive_car from "../Exclusive_car";
 import TemporaryDrawer from "../Drawer";
 
-import "./Tabs.scss"
+import "./Tabs.scss";
+import SV_car from "../SV_car";
 
 export default function Tabs() {
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -35,16 +36,28 @@ export default function Tabs() {
             aria-label="lab API tabs example"
           >
             <Tab label="Popular" value="1" />
-            <Tab label="Large Car" value="2" />
-            <Tab label="Small Car" value="3" />
-            <Tab label="Exclusive Car" value="4" />
+            <Tab label="Ecomon" value="2" />
+            <Tab label="Premium" value="3" />
+            <Tab label="Luxury" value="4" />
+            <Tab label="SV" value="5" />
           </TabList>
         </Box>
-       
-        <TabPanel value="1"><Popular_car/></TabPanel>
-        <TabPanel value="2"><Large_car/></TabPanel>
-        <TabPanel value="3"><Small_car/></TabPanel>
-        <TabPanel value="4"><Exclusive_car/></TabPanel>
+
+        <TabPanel value="1">
+          <Popular_car />
+        </TabPanel>
+        <TabPanel value="2">
+          <Large_car />
+        </TabPanel>
+        <TabPanel value="3">
+          <Small_car />
+        </TabPanel>
+        <TabPanel value="4">
+          <Exclusive_car />
+        </TabPanel>
+        <TabPanel value="5">
+          <SV_car />
+        </TabPanel>
       </TabContext>
     </Box>
   );

@@ -1,12 +1,15 @@
 
-.swiper {
+.mySwiper{
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
   border-radius: 10px !important;
   display: none !important;
-  
 }
+// .swiper {
+
+  
+// }
 
 .swiper-slide {
   background-position: center;
@@ -46,13 +49,13 @@
   }
 }
 @media (max-width: 768px) {
-  .swiper {
+  .mySwiper {
     display: inline !important;
   }
 
 }
 @media (max-width: 576px) {
-  .swiper {
+  .mySwiper {
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -95,7 +98,7 @@ span{
 }
 
 @media (max-width: 430px) {
-    .swiper {
+    .mySwiper{
       padding-top: 10px;
       padding-bottom: 10px;
     }

@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Swiger.scss";
 
-// import required modules
+
 import { Navigation, Pagination } from "swiper/modules";
 
 export default function CarouselCustom() {
@@ -23,7 +23,7 @@ export default function CarouselCustom() {
   };
 
   return (
-    <>
+    
       <Swiper
         pagination={pagination}
         slidesPerView={1}
@@ -56,7 +56,7 @@ export default function CarouselCustom() {
           },
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper1"
       >
         <SwiperSlide className="swiper_slide" style={{ width: "400px", height: "230px" }}>
           <div className="carousel_box">
@@ -186,6 +186,6 @@ export default function CarouselCustom() {
         </SwiperSlide>
        
       </Swiper>
-    </>
+
   );
 }

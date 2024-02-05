@@ -15,7 +15,7 @@ export default function DateTime() {
       <DemoContainer components={["DateTimePicker", "DateTimePicker"]}>
         <DateTimePicker
           sx={{ width: "250px" }}
-          label="With Time Clock"
+          label=""
           slotProps={{
             textField: { size: "small" },
           }}
@@ -25,14 +25,7 @@ export default function DateTime() {
             seconds: renderTimeViewClock,
           }}
         />
-        {/* <DateTimePicker
-          label="Without view renderers"
-          viewRenderers={{
-            hours: null,
-            minutes: null,
-            seconds: null,
-          }}
-        /> */}
+    
       </DemoContainer>
     </LocalizationProvider>
   );

@@ -2,15 +2,12 @@
 import { Button } from "@mui/material";
 
 import React, { Fragment, useState } from "react";
-import "./Popular_car.scss";
+import "./SV_car.scss";
 import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
-export default function Popular_car() {
-  // const [isRed, setIsRed] = useState(false);
-  // const like = (id) => {
-  //   setIsRed(!isRed);
-  // };
+
+export default function SV_car() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
@@ -36,7 +33,6 @@ export default function Popular_car() {
             </Link>
           </div>
         </li>
-
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
           <div className="head_card">
             <p>All New Rush</p>
@@ -188,10 +184,9 @@ export default function Popular_car() {
           </div>
         </li>
       </ul>
-      <CustomSwiper />
-      
+        <CustomSwiper />
+     
       <Button
-        type="submit"
         className="btn"
         variant="text"
         style={{ backgroundColor: "var(--white)", color: "" }}

@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 import "./Small_car.scss";
 import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
+import Link from "next/link";
 
 export default function Small_car() {
   return (
@@ -20,9 +21,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -35,9 +39,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -50,9 +57,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -65,9 +75,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -79,9 +92,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -93,9 +109,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -107,9 +126,12 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>
@@ -121,13 +143,17 @@ export default function Small_car() {
             <p>
               $72.00/ <span>day</span>
             </p>
-            <Button variant="contained" style={{ background: "#FEC31D" }}>
-              Rent Now
-            </Button>
+            <Link href="order">
+              {" "}
+              <Button type="submit" variant="contained" style={{ background: "#FEC31D" }}>
+                Rent Now
+              </Button>
+            </Link>
           </div>
         </li>
       </ul>
-      <CustomSwiper />
+        <CustomSwiper />
+      
       <Button
         className="btn"
         variant="text"
