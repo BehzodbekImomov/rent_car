@@ -53,18 +53,7 @@ export default function Card_Custom() {
                 </div>
                 <p>Baggage:</p> <span>1800</span>
               </li>
-              {/* <li>
-                <div className="box">
-                  <Image
-                    style={{ borderRadius: "100%" }}
-                    src="/images/ice.png"
-                    width={30}
-                    height={30}
-                    alt=""
-                  />
-                </div>
-                <p>Air conditioner:</p> <span>Available</span>
-              </li> */}
+             
               <li>
                 <div className="box">
                   <Image
