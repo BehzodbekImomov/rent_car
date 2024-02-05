@@ -2,7 +2,7 @@
 import { Button } from "@mui/material";
 
 import React, { Fragment, useState } from "react";
-import "./Scar.scss";
+import "./S.scss";
 import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
