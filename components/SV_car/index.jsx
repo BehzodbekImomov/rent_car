@@ -2,7 +2,7 @@
 import { Button } from "@mui/material";
 
 import React, { Fragment, useState } from "react";
-import "./SV_car.scss";
+import "./SVcar.scss";
 import CustomizedRating from "../Rating";
 import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
