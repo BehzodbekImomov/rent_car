@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,8 +14,10 @@ import { EffectCoverflow } from "swiper/modules";
 import CustomizedRating from "../Rating";
 import { Button } from "@mui/material";
 import Link from "next/link";
+import { carContext } from "@/context/CarContext";
 
 export default function CustomSwiper({ popular }) {
+  const { dispatch } = useContext(carContext);
   return (
     <Swiper
       effect={"coverflow"}
