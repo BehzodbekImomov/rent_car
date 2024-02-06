@@ -1,4 +1,6 @@
 import { Box } from "@mui/material";
+import { LoadingButton } from '@mui/lab';
+
 import CircularProgress, {
   circularProgressClasses,
 } from '@mui/material/CircularProgress';  
@@ -34,7 +36,8 @@ export default function Loading(props) {
         {...props}
       />
     </Box> */}
- 
+ {/* <LoadingButton/> */}
+ <h1 style={{fontSize:'55px',fontWeight:"700",position:"absolute",color:"red"}}>LOADING ...</h1>
 
       </div>
     )

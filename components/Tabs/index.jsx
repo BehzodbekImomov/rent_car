@@ -6,11 +6,11 @@ import Popular_car from "../Popular_car";
 import Large_car from "../Large_car";
 import Small_car from "../Small_car";
 import Exclusive_car from "../Exclusive_car";
+import Scar from "../Scar";
 import TemporaryDrawer from "../Drawer";
 
 import "./Tabs.scss";
-import SVcar from "../Scar";
-import Scar from "../Scar";
+
 
 export default function Tabs() {
   const [value, setValue] = useState("1");

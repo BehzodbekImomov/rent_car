@@ -33,7 +33,9 @@
     align-items: center;
   }
   .order .container_custom .car_content .car_img{
-    display: block;
+    display: flex !important ;
+    flex-direction: column;
+    gap: 10px;
   }
   .swiper-slide img {
     display: block;

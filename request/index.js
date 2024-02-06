@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const request = axios.create({
     baseURL: API,
-    timeout: 10000,
+    timeout: 100000,
     mode: 'cors',
     headers: {
     //   Authorization: token ? `Bearer ${token}` : "",

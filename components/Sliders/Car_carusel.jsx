@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,8 +13,10 @@ import "./Car_carousel.scss";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { carContext } from "@/context/CarContext";
 
 export default function CarCarousel() {
+  const { carProducts } = useContext(carContext);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
@@ -30,10 +32,12 @@ export default function CarCarousel() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <img src="/images/Porsche1.png" />
-        </SwiperSlide>
-        <SwiperSlide>
+        {carProducts[0]?.image.map((e, index) => (
+          <SwiperSlide key={index}>
+            <img src={e?.body} />
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
           <img src="/images/Porsche4.png" />
         </SwiperSlide>
         <SwiperSlide>
@@ -41,7 +45,7 @@ export default function CarCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <img src="/images/Porsche3.png" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -52,18 +56,11 @@ export default function CarCarousel() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper1"
       >
-        <SwiperSlide>
-          <img src="/images/Porsche1.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/Porsche4.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/Porsche2.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/Porsche3.png" />
-        </SwiperSlide>
+         {carProducts[0]?.image.map((e, index) => (
+          <SwiperSlide key={index}>
+            <img src={e?.body} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

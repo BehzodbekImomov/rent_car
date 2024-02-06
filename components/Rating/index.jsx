@@ -24,7 +24,7 @@ export default function CustomizedRating() {
       setRating(2);
     }
   };
-  console.log(rating);
+  //console.log(rating);//
   return (
     <Box
       sx={{
