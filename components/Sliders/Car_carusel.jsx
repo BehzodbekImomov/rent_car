@@ -16,7 +16,7 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
 
-export default function CarCarousel({ data,loading }) {
+export default function CarCarousel({ data, loading }) {
   // const { carProducts } = useContext(carContext);
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -37,15 +37,15 @@ export default function CarCarousel({ data,loading }) {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {loading?<Loading/>: data.map((e) => (
-          <SwiperSlide key={e?.id}>
-            <img src={e?.body} />
-          </SwiperSlide>
-        ))}
-
-        
-        
-      
+        {loading ? (
+          <Loading />
+        ) : (
+          data.map((e) => (
+            <SwiperSlide key={e?.id}>
+              <Image width={800} heigth={500} src={e?.body} alt="img" />
+            </SwiperSlide>
+          ))
+        )}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -56,11 +56,15 @@ export default function CarCarousel({ data,loading }) {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper1"
       >
-        {loading?<Loading/>: data.map((e) => (
-          <SwiperSlide>
-            <img src={e?.body} />
-          </SwiperSlide>
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          data.map((e) => (
+            <SwiperSlide>
+              <Image width={800} heigth={500} src={e?.body} />
+            </SwiperSlide>
+          ))
+        )}
       </Swiper>
     </>
   );

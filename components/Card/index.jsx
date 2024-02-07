@@ -10,9 +10,9 @@ export default function Card_Custom({ id }) {
   // const { carProducts } = useContext(carContext);
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    getDataId();
-  }, []);
+  // useEffect(() => {
+  //   getDataId();
+  // }, []);
 
   async function getDataId() {
     try {
