@@ -15,6 +15,7 @@ import "./Car_carousel.scss";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
+import Image from "next/image";
 
 export default function CarCarousel({ data, loading }) {
   // const { carProducts } = useContext(carContext);
@@ -60,7 +61,7 @@ export default function CarCarousel({ data, loading }) {
           <Loading />
         ) : (
           data.map((e) => (
-            <SwiperSlide>
+            <SwiperSlide key={e?.id}>
               <Image width={800} heigth={500} src={e?.body} />
             </SwiperSlide>
           ))
