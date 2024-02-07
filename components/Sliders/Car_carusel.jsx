@@ -38,7 +38,7 @@ export default function CarCarousel({ data,loading }) {
         className="mySwiper2"
       >
         {loading?<Loading/>: data.map((e) => (
-          <SwiperSlide>
+          <SwiperSlide key={e?.id}>
             <img src={e?.body} />
           </SwiperSlide>
         ))}
