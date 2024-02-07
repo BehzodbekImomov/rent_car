@@ -6,17 +6,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
-import "./styles.scss";
-
-// import required modules
 import { EffectCoverflow } from "swiper/modules";
 import CustomizedRating from "../Rating";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import { carContext } from "@/context/CarContext";
+import Loading from "@/app/(public)/loading";
 
-export default function CustomSwiper({ popular }) {
+import "./styles.scss";
+
+// import required modules
+
+export default function CustomSwiper({ popular, loading }) {
   const { dispatch } = useContext(carContext);
   return (
     <Swiper
@@ -35,44 +36,49 @@ export default function CustomSwiper({ popular }) {
 
       modules={[EffectCoverflow]}
       className="mySwiper"
+      onLoad={true}
     >
-      {popular.map((e) => (
-        <SwiperSlide key={e.id}>
-          <li
-            style={{
-              backgroundImage: `url(${e?.image[0]?.body})`,
-            }}
-          >
-            <div className="head_card">
-              <p>All New Rush</p>
-              {console.log()}
-              <CustomizedRating />
-            </div>
-            <div className="food_card">
-              <p>
-                ${e?.price_use}/ <span>day</span>
-              </p>
-              <Link href="order">
-                {" "}
-                <Button
-                  onClick={() =>
-                    dispatch({
-                      type: "add-to-cart",
-                      payload: e?.id,
-                      products: popular,
-                    })
-                  }
-                  type="submit"
-                  variant="contained"
-                  style={{ background: "#FEC31D" }}
-                >
-                  Rent Now
-                </Button>
-              </Link>
-            </div>
-          </li>
-        </SwiperSlide>
-      ))}
+      {loading ? (
+        <Loading />
+      ) : (
+        popular.map((e) => (
+          <SwiperSlide key={e.id}>
+            <li
+              style={{
+                backgroundImage: `url(${e?.image[0]?.body})`,
+              }}
+            >
+              <div className="head_card">
+                <p>{e?.brand}</p>
+                {console.log()}
+                <CustomizedRating />
+              </div>
+              <div className="food_card">
+                <p>
+                  ${e?.price_use}/ <span>day</span>
+                </p>
+                <Link href={`order/${e?.id}`}>
+                  {" "}
+                  <Button
+                    onClick={() =>
+                      dispatch({
+                        type: "add-to-cart",
+                        payload: e?.id,
+                        products: popular,
+                      })
+                    }
+                    type="submit"
+                    variant="contained"
+                    style={{ background: "#FEC31D" }}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
+              </div>
+            </li>
+          </SwiperSlide>
+        ))
+      )}
 
       {/* <SwiperSlide>
         <li style={{ backgroundImage: "url(/images/pop_car.png)" }}>

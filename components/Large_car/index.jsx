@@ -8,11 +8,13 @@ import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
+import Loading from "@/app/(public)/loading";
 
 export default function Large_car() {
 
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
+  const [isLoading,setIsLoading]=useState(false)
 
   useEffect(() => {
     getData();
@@ -20,18 +22,24 @@ export default function Large_car() {
 
   async function getData() {
     try {
+      setIsLoading(true);
       const res = await request.get("cars/2");
       setPopular(res?.data);
+      setIsLoading(false);
     } catch (err) {
       console.log(err);
     } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <div className="card_cars">
-      <ul className="popular_car">
-        {popular.map((e) => (
+    <ul className="popular_car">
+      {isLoading ? (
+        <Loading />
+      ) : (
+        popular.map((e) => (
           <li
             key={e.id}
             style={{
@@ -39,7 +47,7 @@ export default function Large_car() {
             }}
           >
             <div className="head_card">
-              <p>All New Rush</p>
+              <p>{e?.brand}</p>
               {console.log()}
               <CustomizedRating />
             </div>
@@ -47,7 +55,7 @@ export default function Large_car() {
               <p>
                 ${e?.price_use}/ <span>day</span>
               </p>
-              <Link href="order">
+              <Link href={`order/${e?.id}`}>
                 {" "}
                 <Button
                   onClick={() =>
@@ -55,6 +63,7 @@ export default function Large_car() {
                       type: "add-to-cart",
                       payload: e?.id,
                       products: popular,
+                      // navigate:navigate
                     })
                   }
                   type="submit"
@@ -66,18 +75,19 @@ export default function Large_car() {
               </Link>
             </div>
           </li>
-        ))}
-      </ul>
-      <CustomSwiper popular={popular} />
+        ))
+      )}
+    </ul>
+    <CustomSwiper popular={popular} loading={isLoading}/>
 
-      <Button
-        type="submit"
-        className="btn"
-        variant="text"
-        style={{ backgroundColor: "var(--white)", color: "" }}
-      >
-        Show more car
-      </Button>
-    </div>
+    <Button
+      type="submit"
+      className="btn"
+      variant="text"
+      style={{ backgroundColor: "var(--white)", color: "" }}
+    >
+      Show more
+    </Button>
+  </div>
   );
 }

@@ -37,7 +37,7 @@ export default function Tabs() {
             aria-label="lab API tabs example"
           >
             <Tab label="Popular" value="1" />
-            <Tab label="Ecomon" value="2" />
+            <Tab label="Econom" value="2" />
             <Tab label="Premium" value="3" />
             <Tab label="Luxury" value="4" />
             <Tab label="SV" value="5" />

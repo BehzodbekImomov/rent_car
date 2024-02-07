@@ -8,11 +8,13 @@ import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
+import Loading from "@/app/(public)/loading";
 
 export default function Exclusive_car() {
 
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
+  const [isLoading,setIsLoading]=useState(false)
 
   useEffect(() => {
     getData();
@@ -20,55 +22,63 @@ export default function Exclusive_car() {
 
   async function getData() {
     try {
+      setIsLoading(true);
       const res = await request.get("cars/4");
       setPopular(res?.data);
+      setIsLoading(false);
     } catch (err) {
       console.log(err);
     } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <div className="card_cars">
     <ul className="popular_car">
-      {popular.map((e) => (
-        <li
-          key={e.id}
-          style={{
-            backgroundImage: `url(${e?.image[0]?.body})`,
-          }}
-        >
-          <div className="head_card">
-            <p>All New Rush</p>
-            {console.log()}
-            <CustomizedRating />
-          </div>
-          <div className="food_card">
-            <p>
-              ${e?.price_use}/ <span>day</span>
-            </p>
-            <Link href="order">
-              {" "}
-              <Button
-                onClick={() =>
-                  dispatch({
-                    type: "add-to-cart",
-                    payload: e?.id,
-                    products: popular,
-                  })
-                }
-                type="submit"
-                variant="contained"
-                style={{ background: "#FEC31D" }}
-              >
-                Rent Now
-              </Button>
-            </Link>
-          </div>
-        </li>
-      ))}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        popular.map((e) => (
+          <li
+            key={e.id}
+            style={{
+              backgroundImage: `url(${e?.image[0]?.body})`,
+            }}
+          >
+            <div className="head_card">
+              <p>{e?.brand}</p>
+              {console.log()}
+              <CustomizedRating />
+            </div>
+            <div className="food_card">
+              <p>
+                ${e?.price_use}/ <span>day</span>
+              </p>
+              <Link href={`order/${e?.id}`}>
+                {" "}
+                <Button
+                  onClick={() =>
+                    dispatch({
+                      type: "add-to-cart",
+                      payload: e?.id,
+                      products: popular,
+                      // navigate:navigate
+                    })
+                  }
+                  type="submit"
+                  variant="contained"
+                  style={{ background: "#FEC31D" }}
+                >
+                  Rent Now
+                </Button>
+              </Link>
+            </div>
+          </li>
+        ))
+      )}
     </ul>
-    <CustomSwiper popular={popular} />
+    <CustomSwiper popular={popular} loading={isLoading}/>
 
     <Button
       type="submit"
@@ -76,7 +86,7 @@ export default function Exclusive_car() {
       variant="text"
       style={{ backgroundColor: "var(--white)", color: "" }}
     >
-      Show more car
+      Show more
     </Button>
   </div>
   );

@@ -38,11 +38,14 @@
   padding: 42px 55px 60px;
   li {
     width: 304px;
-    height: 388px;
+    height: 370px;
     border-radius: 10px;
     background: #c4c4c4;
     background-size: 100% 100% !important;
-    
+    object-fit: cover !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .head_card {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -64,7 +67,7 @@ img{
         font-family: "Plus Jakarta Sans";
         font-size: 20px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 400 !important;
         line-height: 150%; /* 30px */
         letter-spacing: -0.6px;
       }
@@ -79,7 +82,12 @@ img{
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      padding: 228px 24px 27px;
+      background-color:#919aa1;
+    padding: 0 10px;
+      height: 70px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding: 0 10px!important;
       p {
         color: var(--white)!important;
         font-family: "Plus Jakarta Sans";
@@ -87,6 +95,7 @@ img{
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+       opacity: 1;
       }
       span {
         color: var(--yellow) !important;
@@ -99,15 +108,15 @@ img{
       button {
         color: var(--black);
         width: 120px;
-        height: 44px;
+        height: 36px !important;
 
         text-align: center;
 
         /* Semibold/Type@16 */
         font-family: "Plus Jakarta Sans";
-        font-size: 16px;
+        font-size: 14px !important;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 300 !important;
         line-height: 150%; /* 24px */
         letter-spacing: -0.32px;
       }
@@ -119,10 +128,10 @@ img{
   text-align: center !important;
 
   /* Semibold/Type@16 */
-  font-family: "Plus Jakarta Sans " !important;
+  font-family: "Roboto","Helvetica","Arial",sans-serif !important ;
   font-size: 16px !important;
   font-style: normal !important;
-  font-weight: 600 !important;
+  font-weight: 400 !important;
   line-height: 150% !important; /* 24px */
   letter-spacing: -0.32px !important;
   display: -webkit-box !important;

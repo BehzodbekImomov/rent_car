@@ -14,11 +14,16 @@ import "./Car_carousel.scss";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { carContext } from "@/context/CarContext";
+import Loading from "@/app/(public)/loading";
 
-export default function CarCarousel() {
-  const { carProducts } = useContext(carContext);
+export default function CarCarousel({ data,loading }) {
+  // const { carProducts } = useContext(carContext);
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+  if (!data) {
+    return <div>Mashinalar mavjud emas.</div>; // yoki kerakli UI-ni ko'rsatishingiz mumkin, masalan, yuklanmoqda bo'lgan spinner, xato xabari yoki boshqa maqbul UI.
+  }
+  console.log(data);
   return (
     <>
       <Swiper
@@ -32,20 +37,15 @@ export default function CarCarousel() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {carProducts[0]?.image.map((e, index) => (
-          <SwiperSlide key={index}>
+        {loading?<Loading/>: data.map((e) => (
+          <SwiperSlide>
             <img src={e?.body} />
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <img src="/images/Porsche4.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/Porsche2.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/Porsche3.png" />
-        </SwiperSlide> */}
+
+        
+        
+      
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -56,8 +56,8 @@ export default function CarCarousel() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper1"
       >
-         {carProducts[0]?.image.map((e, index) => (
-          <SwiperSlide key={index}>
+        {loading?<Loading/>: data.map((e) => (
+          <SwiperSlide>
             <img src={e?.body} />
           </SwiperSlide>
         ))}

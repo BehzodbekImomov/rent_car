@@ -33,11 +33,12 @@ export default function CustomizedRating() {
     >
       <StyledRating
         onChange={handleRatingChange}
+        sx={{ color: "#FEC31D" }}
         name="customized-color"
         defaultValue={0}
         precision={1}
         max={1}
-        icon={<FavoriteIcon fontSize="22px" />}
+        icon={<FavoriteIcon fontSize="22px"  />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
     </Box>

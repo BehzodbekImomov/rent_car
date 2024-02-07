@@ -1,19 +1,40 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .order {
   background: var(--black);
   padding-top: 150px;
   .container_custom {
     color: var(--white);
+    padding: 0 30px;
     .car_content {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
       .car_img {
         width: 45%;
         border-radius: 10px;
-        // background-color: var(--white);
-       
+
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
       }
       .car_title {
@@ -34,22 +55,39 @@
         }
         ul {
           padding-top: 50px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
           gap: 20px;
+         
           li {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             gap: 20px;
             .box {
               width: 45px;
               height: 45px;
               border-radius: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
               align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
               justify-content: center;
               background-color: var(--white);
               opacity: 0.8;
+              // padding-top: 10px;
             }
             p {
               padding-top: 0;
@@ -57,6 +95,12 @@
           }
         }
       }
+    }
+    .car_desc{
+      text-align: center;
+      padding-top: 30px;
+      font-size: 15px;
+      line-height: normal;
     }
     .booking {
       padding-top: 150px;
@@ -75,27 +119,67 @@
         opacity: 0.8;
       }
       form {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         padding-top: 70px;
         .inputs {
           width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           padding-bottom: 30px;
+          -ms-flex-pack: distribute;
           justify-content: space-around;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           input {
             padding: 20px 50px;
             border-radius: 10px;
             background-color: var(--dark);
-            border: oklab(lightness a b);
+
+            outline: none;
+            border: none;
             color: var(--white);
-            font-size:15px;
+            font-size: 15px;
             font-family: "Plus Jakarta Sans";
+            &::-webkit-input-placeholder {
+              font-size: 17px;
+              color: var(--white);
+              font-family: "Plus Jakarta Sans";
+              opacity: 0.5;
+            }
+            &::-moz-placeholder {
+              font-size: 17px;
+              color: var(--white);
+              font-family: "Plus Jakarta Sans";
+              opacity: 0.5;
+            }
+            &:-ms-input-placeholder {
+              font-size: 17px;
+              color: var(--white);
+              font-family: "Plus Jakarta Sans";
+              opacity: 0.5;
+            }
+            &::-ms-input-placeholder {
+              font-size: 17px;
+              color: var(--white);
+              font-family: "Plus Jakarta Sans";
+              opacity: 0.5;
+            }
             &::placeholder {
-              font-size: 20px;
+              font-size: 17px;
               color: var(--white);
               font-family: "Plus Jakarta Sans";
               opacity: 0.5;
@@ -103,37 +187,50 @@
           }
         }
         button {
-          padding: 12px 260px;
+          padding: 12px 120px;
           border-radius: 10px;
-          font-size: 32px;
-          font-weight: 600;
+          font-size: 20px;
+          font-weight: 400;
           text-transform: uppercase;
           font-family: "Plus Jakarta Sans";
           background-color: var(--yellow);
-          color: var(--black);
+          color: var(--white);
+          // opacity: 0.7;
+          border: none;
+          outline: none;
         }
       }
     }
   }
 }
 
-@media (max-width:576px) {
+@media (max-width: 576px) {
   .order {
-   
-   
     .container_custom {
-      
       .car_content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 0 30px;
         gap: 25px;
         .car_img {
           width: 100%;
           border-radius: 10px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
         }
         .car_title {
@@ -154,19 +251,34 @@
           }
           ul {
             padding-top: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             gap: 20px;
             li {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
               align-items: center;
               gap: 15px;
               .box {
                 width: 45px;
                 height: 45px;
                 border-radius: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
                 align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
                 background-color: var(--white);
                 opacity: 0.8;
@@ -181,67 +293,91 @@
       .booking {
         padding-top: 50px;
         padding-bottom: 50px;
-      
+
         h3 {
-         text-align: center;
+          text-align: center;
           font-size: 2.5rem;
-       
         }
         h4 {
-       
           font-size: 1.5rem;
-        
         }
         form {
-         
-          
-          padding: 30px ;
+          padding: 30px;
 
           .inputs {
-          
+            -webkit-box-orient: vertical;
+
+            -webkit-box-direction: normal;
+
+            -ms-flex-direction: column;
+
             flex-direction: column;
             gap: 10px;
             padding-bottom: 30px;
-          
+
             input {
               padding: 20px 120px;
-             
-              font-size:15px;
-            
+
+              font-size: 15px;
+
+              &::-webkit-input-placeholder {
+                font-size: 18px;
+              }
+
+              &::-moz-placeholder {
+                font-size: 18px;
+              }
+
+              &:-ms-input-placeholder {
+                font-size: 18px;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 18px;
+              }
+
               &::placeholder {
                 font-size: 18px;
-              
               }
             }
           }
           button {
             padding: 12px 180px;
-           
+
             font-size: 25px;
-           
           }
         }
       }
     }
   }
 }
-@media (max-width:576px) {
+@media (max-width: 576px) {
   .order {
-   
-   
     .container_custom {
-      
       .car_content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 0 30px;
         gap: 25px;
         .car_img {
           width: 100%;
           border-radius: 10px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
           justify-content: center;
         }
         .car_title {
@@ -262,19 +398,34 @@
           }
           ul {
             padding-top: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             gap: 20px;
             li {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
               align-items: center;
               gap: 15px;
               .box {
                 width: 45px;
                 height: 45px;
                 border-radius: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
                 align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
                 justify-content: center;
                 background-color: var(--white);
                 opacity: 0.8;
@@ -289,44 +440,58 @@
       .booking {
         padding-top: 50px;
         padding-bottom: 50px;
-      
+
         h3 {
-         text-align: center;
+          text-align: center;
           font-size: 2.5rem;
-       
         }
         h4 {
-       
           font-size: 1.5rem;
-        
         }
         form {
-         
-          
-          padding: 30px ;
+          padding: 30px;
 
           .inputs {
-          
+            -webkit-box-orient: vertical;
+
+            -webkit-box-direction: normal;
+
+            -ms-flex-direction: column;
+
             flex-direction: column;
             gap: 10px;
             padding-bottom: 30px;
-          
+
             input {
               padding: 18px 52px;
-             
-              font-size:15px;
-            
+
+              font-size: 15px;
+
+              &::-webkit-input-placeholder {
+                font-size: 15px;
+              }
+
+              &::-moz-placeholder {
+                font-size: 15px;
+              }
+
+              &:-ms-input-placeholder {
+                font-size: 15px;
+              }
+
+              &::-ms-input-placeholder {
+                font-size: 15px;
+              }
+
               &::placeholder {
                 font-size: 15px;
-              
               }
             }
           }
           button {
             padding: 12px 130px;
-           
+
             font-size: 20px;
-           
           }
         }
       }
