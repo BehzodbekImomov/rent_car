@@ -10,6 +10,7 @@ import { carContext } from "@/context/CarContext";
 import "./Small_car.scss";
 import { request } from "@/request";
 import Loading from "@/app/(public)/loading";
+import { REST } from "@/constants/enpoint";
 
 export default function Small_car() {
   const { dispatch } = useContext(carContext);
@@ -22,7 +23,7 @@ const [isLoading,setIsLoading]=useState(false)
   async function getData() {
     try {
       setIsLoading(true);
-      const res = await request.get("cars/3");
+      const res = await request.get(`${REST.CARS}cars/3`);
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
@@ -52,7 +53,7 @@ const [isLoading,setIsLoading]=useState(false)
               </div>
               <div className="food_card">
                 <p>
-                  ${e?.price_use}/ <span>day</span>
+                AED{e?.price_use}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}

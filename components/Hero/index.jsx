@@ -1,6 +1,9 @@
 import { Button } from "@nextui-org/react";
-import "./Hero.scss";
 import { Stack } from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import Link from "next/link";
+
+import "./Hero.scss";
 
 export default function Hero() {
   return (
@@ -18,10 +21,25 @@ export default function Hero() {
           <div className="hero_buttons">
             <Stack spacing={2} direction="row">
               <Button className="button_yellow">Booking Now</Button>
-              <Button className="button_text" variant="text">See all cars</Button>
+              <Link href="#brands">
+              <Button className="button_text" variant="text">
+                See all cars
+              </Button>
+              </Link>
             </Stack>
           </div>
         </div>
+      </div>
+      <div className="fadbeack">
+        <Link href="https://wa.me/971564755115" target="_blank">
+        <div className="box_fad">
+          <WhatsAppIcon
+            fontSize="30px"
+            sx={{ width: "50px", height: "50px" }}
+            color="info"
+          />
+        </div>
+        </Link>
       </div>
     </section>
   );

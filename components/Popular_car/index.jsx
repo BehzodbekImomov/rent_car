@@ -12,6 +12,7 @@ import "./Popular_car.scss";
 import { useParams } from "next/navigation";
 import { useNavigate } from "react-router-dom";
 import Loading from "@/app/(public)/loading";
+import { REST } from "@/constants/enpoint";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
@@ -39,7 +40,7 @@ export default function Popular_car() {
   async function getData() {
     try {
       setIsLoading(true);
-      const res = await request.get("cars/1");
+      const res = await request.get(`${REST.CARS}cars/1`);
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
@@ -59,7 +60,7 @@ export default function Popular_car() {
             <li
               key={e.id}
               style={{
-                backgroundImage: `url(${e?.image[0]?.body})`,
+                backgroundImage: `url(${REST.IMAGES}/${e?.id})`,
               }}
             >
               <div className="head_card">
@@ -69,7 +70,7 @@ export default function Popular_car() {
               </div>
               <div className="food_card">
                 <p>
-                  ${e?.price_use}/ <span>day</span>
+                AED{e?.price_use}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}

@@ -8,7 +8,9 @@ export default function PublicLayout({ children }) {
     return (
       <Fragment>
           <Header />
+          
           <main>
+          
           {children}
           </main>
          

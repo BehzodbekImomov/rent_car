@@ -9,6 +9,7 @@ import Link from "next/link";
 import { carContext } from "@/context/CarContext";
 import { request } from "@/request";
 import Loading from "@/app/(public)/loading";
+import { REST } from "@/constants/enpoint";
 
 export default function Scar() {
 
@@ -23,7 +24,7 @@ export default function Scar() {
   async function getData() {
     try {
       setIsLoading(true);
-      const res = await request.get("cars/5");
+      const res = await request.get(`${REST.CARS}cars/5`);
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
@@ -53,7 +54,7 @@ export default function Scar() {
               </div>
               <div className="food_card">
                 <p>
-                  ${e?.price_use}/ <span>day</span>
+                AED{e?.price_use}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}

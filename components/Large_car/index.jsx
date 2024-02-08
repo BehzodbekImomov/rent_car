@@ -9,6 +9,7 @@ import Link from "next/link";
 import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
+import { REST } from "@/constants/enpoint";
 
 export default function Large_car() {
 
@@ -23,7 +24,7 @@ export default function Large_car() {
   async function getData() {
     try {
       setIsLoading(true);
-      const res = await request.get("cars/2");
+      const res = await request.get(`${REST.CARS}cars/2`);
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
@@ -53,7 +54,7 @@ export default function Large_car() {
             </div>
             <div className="food_card">
               <p>
-                ${e?.price_use}/ <span>day</span>
+                AED{e?.price_use}/ <span>day</span>
               </p>
               <Link href={`order/${e?.id}`}>
                 {" "}

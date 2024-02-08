@@ -6,18 +6,52 @@ import Image from "next/image";
 
 import "./Card.scss";
 import { request } from "@/request";
+import { REST } from "@/constants/enpoint";
 export default function Card_Custom({ id }) {
   // const { carProducts } = useContext(carContext);
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // useEffect(() => {
-  //   getDataId();
-  // }, []);
+  const [booking, setBooking] = useState({
+    customer_name: "",
+    contact_number: "",
+    email: "",
+    from_destination: "",
+  });
+  useEffect(() => {
+    getDataId();
+  }, []);
+
+  const submit = (e) => {
+    e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    setBooking({ ...booking, [e.target.name]: e.target.value });
+  };
+
+  const handleClick = async () => {
+    try {
+      setIsLoading(true);
+      
+      booking.car_id = Number(id);
+      console.log(booking);
+      await request.post(`${REST.ORDERS}`, booking);
+     setBooking({  customer_name: "",
+     contact_number: "",
+     email: "",
+     from_destination: "",})
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   async function getDataId() {
     try {
       setIsLoading(true);
-      const res = await request.get(`car/${id}`);
+      const res = await request.get(`${REST.CARS}car/${id}`);
       setPopular(res?.data);
       // console.log(res);
       setIsLoading(false);
@@ -28,18 +62,18 @@ export default function Card_Custom({ id }) {
     }
   }
 
-  console.log(popular);
+
   return (
     <div className="order">
       <div className="container_custom">
         <div className="car_content">
           <div className="car_img">
-            <CarCarousel data={popular?.image} loading={isLoading} />
+            <CarCarousel data={popular.image} loading={isLoading} />
           </div>
           <div className="car_title">
             <span>{popular?.category?.name}</span>
             <h3>{popular?.model}</h3>
-            <p>{popular?.price_use} $/day</p>
+            <p>{popular?.price_use} AED/day</p>
             <ul>
               <li>
                 <div className="box">
@@ -99,14 +133,40 @@ export default function Card_Custom({ id }) {
         <div className="booking">
           <h3>Booking</h3>
           <h4>Please fill in the details</h4>
-          <form>
+          <form onSubmit={submit}>
             <div className="inputs">
-              <input type="text" placeholder="Your name " />
-              <input type="text" placeholder="Your E-mail " />
-              <input type="text" placeholder="Your Phone " />
-              <input type="text" placeholder="Your City " />
+              <input
+                onChange={handleChange}
+                name="customer_name"
+                value={booking.customer_name}
+                type="text"
+                placeholder="Your name "
+              />
+              <input
+                onChange={handleChange}
+                name="email"
+                value={booking.email}
+                type="email"
+                placeholder="Your E-mail "
+              />
+              <input
+                onChange={handleChange}
+                name="contact_number"
+                value={booking.contact_number}
+                type="tel"
+                placeholder="Your Phone "
+              />
+              <input
+                onChange={handleChange}
+                name="from_destination"
+                value={booking.from_destination}
+                type="text"
+                placeholder="Your City "
+              />
             </div>
-            <button>order</button>
+            <button onClick={handleClick} type="submit">
+              order
+            </button>
           </form>
         </div>
       </div>

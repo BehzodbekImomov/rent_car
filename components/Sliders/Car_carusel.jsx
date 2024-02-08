@@ -22,7 +22,7 @@ export default function CarCarousel({ data, loading }) {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   if (!data) {
-    return <div>Mashinalar mavjud emas.</div>; // yoki kerakli UI-ni ko'rsatishingiz mumkin, masalan, yuklanmoqda bo'lgan spinner, xato xabari yoki boshqa maqbul UI.
+    return <Loading />; // yoki kerakli UI-ni ko'rsatishingiz mumkin, masalan, yuklanmoqda bo'lgan spinner, xato xabari yoki boshqa maqbul UI.
   }
   console.log(data);
   return (
@@ -43,7 +43,9 @@ export default function CarCarousel({ data, loading }) {
         ) : (
           data.map((e) => (
             <SwiperSlide key={e?.id}>
-              <Image width={800} heigth={500} src={e?.body} alt="img" />
+              <figure>
+                <img src={e?.body} alt="img" />
+              </figure>
             </SwiperSlide>
           ))
         )}
@@ -62,7 +64,9 @@ export default function CarCarousel({ data, loading }) {
         ) : (
           data.map((e) => (
             <SwiperSlide key={e?.id}>
-              <Image width={800} heigth={500} src={e?.body} />
+              <figure>
+                <img src={e?.body} />
+              </figure>
             </SwiperSlide>
           ))
         )}

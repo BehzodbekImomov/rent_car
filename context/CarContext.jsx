@@ -8,17 +8,23 @@ const initialState = {
   carProducts: [],
 };
 
-const reducer = (state, { type, payload, products }) => {
+const reducer = (state, { type, payload, products, data }) => {
+
   const { carProducts } = state;
   switch (type) {
     case "add-to-cart": {
       const product = products.find((pr) => pr.id === payload);
-      console.log(product);
+     
       return {
         ...state,
         carProducts: [{ ...product }],
       };
-    
+    }
+    case "id": {
+      return {
+        ...state,
+        state:data
+      };
     }
     default:
       return state;

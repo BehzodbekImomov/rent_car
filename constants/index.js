@@ -1,1 +1,1 @@
-export const API  = "https://rentcar.pythonanywhere.com/car/v1/";
+export const API  = "http://rent-backend.portofino-luxury.com/";
