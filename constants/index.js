@@ -1,1 +1,1 @@
-export const API  = "http://rent-backend.portofino-luxury.com/";
+export const API  = "https://backend.portofino-luxury.com/";
