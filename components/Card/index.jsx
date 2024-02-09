@@ -97,7 +97,7 @@ console.log(popular);
                     alt=""
                   />
                 </div>
-                <p>Transmission:</p> <span>{popular.gear && popular.gear.replace("transmission", "")}</span>
+                <p>Transmission:</p> <span>{popular.gear && popular.gear.replace("matic transmission", "")}</span>
               </li>
               <li>
                 <div className="box">

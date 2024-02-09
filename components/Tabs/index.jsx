@@ -11,7 +11,6 @@ import TemporaryDrawer from "../Drawer";
 
 import "./Tabs.scss";
 
-
 export default function Tabs() {
   const [value, setValue] = useState("1");
   const handleChange = (event, newValue) => {
@@ -36,11 +35,11 @@ export default function Tabs() {
             onChange={handleChange}
             aria-label="lab API tabs example"
           >
-            <Tab label="Popular" value="1" />
-            <Tab label="Econom" value="2" />
-            <Tab label="Premium" value="3" />
-            <Tab label="Luxury" value="4" />
-            <Tab label="SV" value="5" />
+            <Tab label="Sport" value="1" />
+            <Tab label="Premium" value="2" />
+            <Tab label="Luxur" value="3" />
+            <Tab label="SV" value="4" />
+            <Tab label="Ecomon" value="5" />
           </TabList>
         </Box>
 

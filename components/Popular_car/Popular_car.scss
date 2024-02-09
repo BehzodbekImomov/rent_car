@@ -63,7 +63,6 @@ img{
 }
       p {
         color: var(--Secondary-500, #0e52db);
-
         /* Bold/Type@20 */
         font-family: "Plus Jakarta Sans";
         font-size: 20px;
@@ -71,6 +70,9 @@ img{
         font-weight: 400 !important;
         line-height: 150%; /* 30px */
         letter-spacing: -0.6px;
+        padding: 10px 15px !important;
+        border-radius: 10px !important;
+        background-color: var(--black) !important;
       }
     }
     .food_card {

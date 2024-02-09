@@ -13,9 +13,7 @@ export default function Hero() {
           <div className="hero_title">
             <h2>Fast And Easy Way To Rent A Car</h2>
             <p>
-              Our Car Rental online booking system designed to meet the specific
-              needs of car rental business owners. This easy-to-use car rental
-              software will let you manage.
+            Our cars are not just a means of transportation, but for luxury
             </p>
           </div>
           <div className="hero_buttons">

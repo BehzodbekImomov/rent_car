@@ -43,13 +43,12 @@ export default function CarCarousel({ data, loading }) {
         ) : (
           data.map((e) => (
             <SwiperSlide key={e?.id}>
-            
-               
-                 {/* <figure> */}
-                <img src={`https://${e?.body}`} ty alt="img" />
-                {console.log(`https://${e?.body}`)}
-               {/* </figure> */}
-             
+              <figure>
+                <img
+                  src={`https://${e?.body.replace("/home/portofin", "")}`}
+                  alt="img"
+                />
+              </figure>
             </SwiperSlide>
           ))
         )}
@@ -69,7 +68,10 @@ export default function CarCarousel({ data, loading }) {
           data.map((e) => (
             <SwiperSlide key={e?.id}>
               <figure>
-                <img src={e?.body} />
+                <img
+                  src={`https://${e?.body.replace("/home/portofin", "")}`}
+                  alt="img"
+                />
               </figure>
             </SwiperSlide>
           ))

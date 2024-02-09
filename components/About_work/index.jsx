@@ -25,8 +25,7 @@ export default function About_work() {
             </div>
             <h4>Choose Location</h4>
             <p>
-              Aliquam erat volutpat. Integer malesuada turpis id fringilla
-              suscipit. Maecenas ultrices, orci vitae convallis mattis.
+              You can pick up and leave the car in a city convenient for you.
             </p>
           </li>
           <li>
@@ -36,8 +35,7 @@ export default function About_work() {
 
             <h4>Choice a Date</h4>
             <p>
-              Aliquam erat volutpat. Integer malesuada turpis id fringilla
-              suscipit. Maecenas ultrices, orci vitae convallis mattis.
+              Chooice Date. You can book a car at a time convenient for you.
             </p>
           </li>
           <li>
@@ -52,8 +50,8 @@ export default function About_work() {
             </div>
             <h4>Choice a Car</h4>
             <p>
-              Aliquam erat volutpat. Integer malesuada turpis id fringilla
-              suscipit. Maecenas ultrices, orci vitae convallis mattis.
+              Choose a Car. The largest selection of sports, luxury, premium,
+              econom category cars is only with us
             </p>
           </li>
         </ul>
