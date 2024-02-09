@@ -39,7 +39,7 @@ export default function Tabs() {
             <Tab label="Premium" value="2" />
             <Tab label="Luxur" value="3" />
             <Tab label="SV" value="4" />
-            <Tab label="Ecomon" value="5" />
+            <Tab label="Econom" value="5" />
           </TabList>
         </Box>
 

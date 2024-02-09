@@ -13,11 +13,13 @@ import { useParams } from "next/navigation";
 import { useNavigate } from "react-router-dom";
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
+import { forEach } from "jszip";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
-  const [data,setData]=useState([])
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   // const navigate = useNavigate();
 
@@ -25,22 +27,10 @@ export default function Popular_car() {
     getData();
   }, []);
 
-  // async function getData() {
-  //   try {
-  //     setIsLoading(true);
-  //     const res = await request.get("cars/1");
-  //     setPopular(res?.data);
-  //     setIsLoading(false);
-  //   } catch (err) {
-  //     console.log(err);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }
   async function getData() {
     try {
       setIsLoading(true);
-      const res = await request.get(`${REST.CARS}cars/1`);
+      const res = await request.get(`${REST.CARS}cars/1?page=${page}`);
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
@@ -49,6 +39,20 @@ export default function Popular_car() {
       setIsLoading(false);
     }
   }
+
+  const handlePage = async () => {
+    setPage(1);
+    setIsLoading(true);
+    try {
+      const res = await request.get(`${REST.CARS}cars/1?page=${page + 1}`);
+      setPopular(res?.data);
+      setPage(prevPage => prevPage + 1);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="card_cars">
@@ -73,12 +77,12 @@ export default function Popular_car() {
               </div>
               <div className="food_card">
                 <p>
-                AED{e?.price_use}/ <span>day</span>
+                  AED{e?.price_use}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <Button
-                  onLoad={isLoading}
+                    onLoad={isLoading}
                     onClick={() =>
                       dispatch({
                         type: "add-to-cart",
@@ -99,12 +103,13 @@ export default function Popular_car() {
           ))
         )}
       </ul>
-      <CustomSwiper popular={popular} loading={isLoading}/>
+      <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
         type="submit"
         className="btn"
         variant="text"
+        onClick={handlePage}
         style={{ backgroundColor: "var(--white)", color: "" }}
       >
         Show more

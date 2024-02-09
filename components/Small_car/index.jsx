@@ -16,6 +16,7 @@ export default function Small_car() {
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     getData();
   }, []);
@@ -32,6 +33,20 @@ export default function Small_car() {
       setIsLoading(false);
     }
   }
+
+  const handlePage = async () => {
+    setPage(1);
+    setIsLoading(true);
+    try {
+      const res = await request.get(`${REST.CARS}cars/3?page=${page + 1}`);
+      setPopular(res?.data);
+      setPage(prevPage => prevPage + 1);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="card_cars">
@@ -88,6 +103,7 @@ export default function Small_car() {
         type="submit"
         className="btn"
         variant="text"
+        onClick={handlePage}
         style={{ backgroundColor: "var(--white)", color: "" }}
       >
         Show more
