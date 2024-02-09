@@ -15,7 +15,7 @@ import { REST } from "@/constants/enpoint";
 export default function Small_car() {
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
-const [isLoading,setIsLoading]=useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     getData();
   }, []);
@@ -43,9 +43,13 @@ const [isLoading,setIsLoading]=useState(false)
             <li
               key={e.id}
               style={{
-                backgroundImage: `url(${e?.image[0]?.body})`,
+                backgroundImage: `url(https://${e?.image[0]?.body.replace(
+                  "/home/portofin/",
+                  ""
+                )})`,
               }}
             >
+          
               <div className="head_card">
                 <p>{e?.brand}</p>
                 {console.log()}
@@ -53,7 +57,7 @@ const [isLoading,setIsLoading]=useState(false)
               </div>
               <div className="food_card">
                 <p>
-                AED{e?.price_use}/ <span>day</span>
+                  AED{e?.price_use}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}
@@ -78,7 +82,7 @@ const [isLoading,setIsLoading]=useState(false)
           ))
         )}
       </ul>
-      <CustomSwiper popular={popular} loading={isLoading}/>
+      <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
         type="submit"

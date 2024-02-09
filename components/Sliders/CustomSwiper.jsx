@@ -47,7 +47,10 @@ export default function CustomSwiper({ popular, loading }) {
             <SwiperSlide key={e.id}>
               <li
                 style={{
-                  backgroundImage: `url(${REST.IMAGES}/${e?.id})`,
+                  backgroundImage: `url(https://${e?.image[0]?.body.replace(
+                    "/home/portofin/",
+                    ""
+                  )})`,
                 }}
               >
                 <div className="head_card">
@@ -57,7 +60,7 @@ export default function CustomSwiper({ popular, loading }) {
                 </div>
                 <div className="food_card">
                   <p>
-                  AED{e?.price_use}/ <span>day</span>
+                    AED{e?.price_use}/ <span>day</span>
                   </p>
                   <Link href={`order/${e?.id}`}>
                     {" "}

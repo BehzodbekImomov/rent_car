@@ -23,8 +23,7 @@ export default function Informations() {
               <div className="info_desc">
                 <h4>Customer Support</h4>
                 <p>
-                  Aliquam erat volutpat. Integer malesuada turpis id fringilla
-                  suscipit. Maecenas ultrices.
+                With us you can rent a car on favorable terms
                 </p>
               </div>
             </li>
@@ -44,8 +43,7 @@ export default function Informations() {
               <div className="info_desc">
                 <h4>Many Location</h4>
                 <p>
-                  Aliquam erat volutpat. Integer malesuada turpis id fringilla
-                  suscipit. Maecenas ultrices.
+                We have many car delivery locations
                 </p>
               </div>
             </li>

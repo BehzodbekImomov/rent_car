@@ -43,8 +43,8 @@ body {
 
 .fadbeack{
   position: fixed;
-  top: 500px;
-  right: 80px;
+  bottom: 5px;
+  right: 5px;
 z-index: 1000;
 
 }
@@ -59,6 +59,8 @@ z-index: 1000;
   align-items: center;
   justify-content: center;
 }
+
+
 ul{
   list-style: none;
 }

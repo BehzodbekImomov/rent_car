@@ -44,7 +44,7 @@ export default function Exclusive_car() {
           <li
             key={e.id}
             style={{
-              backgroundImage: `url(${e?.image[0]?.body})`,
+              backgroundImage: `url(https://${e?.image[0]?.body.replace("/home/portofin/", "")})`,
             }}
           >
             <div className="head_card">

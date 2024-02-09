@@ -40,17 +40,8 @@ export default function Footer() {
             <li>
               <h4>About</h4>
               <p>How it works </p>
-              <p>Featured</p>
-              <p>Partnership</p>
-              <p>Bussiness Relation </p>
             </li>
-            <li>
-              <h4>Community</h4>
-              <p>Events</p>
-              <p>Blog</p>
-              <p>Podcast</p>
-              <p>Invite a friend </p>
-            </li>
+
             <li>
               <h4>Socials</h4>
               <p>Discord</p>

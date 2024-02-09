@@ -62,7 +62,7 @@ export default function Card_Custom({ id }) {
     }
   }
 
-
+console.log(popular);
   return (
     <div className="order">
       <div className="container_custom">
@@ -71,7 +71,7 @@ export default function Card_Custom({ id }) {
             <CarCarousel data={popular.image} loading={isLoading} />
           </div>
           <div className="car_title">
-            <span>{popular?.category?.name}</span>
+            <span>{popular?.brand}</span>
             <h3>{popular?.model}</h3>
             <p>{popular?.price_use} AED/day</p>
             <ul>
@@ -97,7 +97,7 @@ export default function Card_Custom({ id }) {
                     alt=""
                   />
                 </div>
-                <p>Transmission:</p> <span>{popular?.gear}</span>
+                <p>Transmission:</p> <span>{popular.gear && popular.gear.replace("transmission", "")}</span>
               </li>
               <li>
                 <div className="box">

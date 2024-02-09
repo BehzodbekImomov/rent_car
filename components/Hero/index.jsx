@@ -20,7 +20,10 @@ export default function Hero() {
           </div>
           <div className="hero_buttons">
             <Stack spacing={2} direction="row">
+              <Link href="https://wa.me/971564755115">
+              
               <Button className="button_yellow">Booking Now</Button>
+              </Link>
               <Link href="#brands">
               <Button className="button_text" variant="text">
                 See all cars

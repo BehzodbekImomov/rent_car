@@ -13,8 +13,7 @@ const Cars = () => {
         <div className="cars_content">
           <h3>Most popular car rental deals</h3>
           <p>
-            A high-performing web-based car rental system for any rent-a-car
-            company and website
+          A high-performing car rental system and website in AE
           </p>
         </div>
 

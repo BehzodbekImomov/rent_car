@@ -43,9 +43,13 @@ export default function CarCarousel({ data, loading }) {
         ) : (
           data.map((e) => (
             <SwiperSlide key={e?.id}>
-              <figure>
-                <img src={e?.body} alt="img" />
-              </figure>
+            
+               
+                 {/* <figure> */}
+                <img src={`https://${e?.body}`} ty alt="img" />
+                {console.log(`https://${e?.body}`)}
+               {/* </figure> */}
+             
             </SwiperSlide>
           ))
         )}
