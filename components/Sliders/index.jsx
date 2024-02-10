@@ -1,8 +1,8 @@
 "use client";
 // import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
