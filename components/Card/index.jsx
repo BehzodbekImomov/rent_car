@@ -76,7 +76,7 @@ export default function Card_Custom({ id }) {
           <div className="car_title">
             <span>{popular?.brand}</span>
             <h3>{popular?.model}</h3>
-            <p>{popular?.price_use} AED/day</p>
+            <p>{popular?.price_arab} AED/day</p>
             <ul>
               <li>
                 <div className="box">
