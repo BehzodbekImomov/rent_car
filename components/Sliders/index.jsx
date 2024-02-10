@@ -1,6 +1,7 @@
 "use client";
 // import React, { useRef, useState } from 'react';
 // Import Swiper React components
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,7 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Swiger.scss";
 
-import { Navigation, Pagination } from "swiper/modules";
 
 export default function CarouselCustom() {
   const pagination = {
