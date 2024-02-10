@@ -86,6 +86,7 @@ export default function Footer() {
         <div className="line"></div>
         <div className="food_end">
           <Link
+          id="location_id"
             href="https://maps.app.goo.gl/BpqwZZWG9rqxok3fA"
             target="_blank"
           >

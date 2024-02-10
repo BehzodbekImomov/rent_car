@@ -63,7 +63,7 @@
           -ms-flex-direction: column;
           flex-direction: column;
           gap: 20px;
-         
+
           li {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -96,7 +96,7 @@
         }
       }
     }
-    .car_desc{
+    .car_desc {
       text-align: center;
       padding-top: 30px;
       font-size: 15px;
@@ -204,7 +204,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .order {
     .container_custom {
       .car_content {
@@ -302,9 +302,8 @@
           font-size: 1.5rem;
         }
         form {
-        
-width: 80%;
-margin: 0 auto;
+          width: 80%;
+          margin: 0 auto;
           .inputs {
             -webkit-box-orient: vertical;
 
@@ -315,10 +314,10 @@ margin: 0 auto;
             flex-direction: column;
             gap: 10px;
             padding-bottom: 30px;
-width: 100%;
+            width: 100%;
             input {
               padding: 20px 30px;
-width: 100%;
+              width: 100%;
               font-size: 15px;
 
               &::-webkit-input-placeholder {
@@ -344,7 +343,7 @@ width: 100%;
           }
           button {
             padding: 18px 10px;
-width: 100%;
+            width: 100%;
             font-size: 20px;
           }
         }
@@ -450,8 +449,6 @@ width: 100%;
           font-size: 1.5rem;
         }
         form {
-       
-
           .inputs {
             -webkit-box-orient: vertical;
 

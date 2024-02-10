@@ -98,9 +98,14 @@
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: end;
+      text-align: center;
+      #location_id{
+        color: var(--yellow)!important;
+       
+      }
       a {
         color: var(--white);
-        text-align: right;
+        text-align: center;
 
         /* Semibold/Type@16 */
         font-family: "Plus Jakarta Sans";

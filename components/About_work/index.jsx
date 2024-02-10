@@ -35,7 +35,7 @@ export default function About_work() {
 
             <h4>Choice a Date</h4>
             <p>
-              Chooice Date. You can book a car at a time convenient for you.
+               You can book a car at a time convenient for you.
             </p>
           </li>
           <li>
@@ -50,7 +50,7 @@ export default function About_work() {
             </div>
             <h4>Choice a Car</h4>
             <p>
-              Choose a Car. The largest selection of sports, luxury, premium,
+               The largest selection of sports, luxury, premium,
               econom category cars is only with us
             </p>
           </li>
