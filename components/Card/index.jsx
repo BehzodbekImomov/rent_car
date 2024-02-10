@@ -7,6 +7,7 @@ import Image from "next/image";
 import "./Card.scss";
 import { request } from "@/request";
 import { REST } from "@/constants/enpoint";
+import { Button, CircularProgress } from "@mui/material";
 export default function Card_Custom({ id }) {
   // const { carProducts } = useContext(carContext);
   const [popular, setPopular] = useState([]);
@@ -32,14 +33,16 @@ export default function Card_Custom({ id }) {
   const handleClick = async () => {
     try {
       setIsLoading(true);
-      
+
       booking.car_id = Number(id);
       console.log(booking);
       await request.post(`${REST.ORDERS}`, booking);
-     setBooking({  customer_name: "",
-     contact_number: "",
-     email: "",
-     from_destination: "",})
+      setBooking({
+        customer_name: "",
+        contact_number: "",
+        email: "",
+        from_destination: "",
+      });
       setIsLoading(false);
     } catch (err) {
       console.log(err);
@@ -62,7 +65,7 @@ export default function Card_Custom({ id }) {
     }
   }
 
-console.log(popular);
+  console.log(popular);
   return (
     <div className="order">
       <div className="container_custom">
@@ -97,7 +100,11 @@ console.log(popular);
                     alt=""
                   />
                 </div>
-                <p>Transmission:</p> <span>{popular.gear && popular.gear.replace("matic transmission", "")}</span>
+                <p>Transmission:</p>{" "}
+                <span>
+                  {popular.gear &&
+                    popular.gear.replace("matic transmission", "")}
+                </span>
               </li>
               <li>
                 <div className="box">
@@ -164,9 +171,18 @@ console.log(popular);
                 placeholder="Your City "
               />
             </div>
-            <button onClick={handleClick} type="submit">
+            <Button
+              variant="contained"
+              loading={isLoading}
+              loadingIndicator={
+                <CircularProgress color="secondary" size={20} />
+              }
+              loadingPosition="end"
+              onClick={handleClick}
+              type="submit"
+            >
               order
-            </button>
+            </Button>
           </form>
         </div>
       </div>

@@ -6,7 +6,7 @@ import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 
 import "./Popular_car.scss";
 import { useParams } from "next/navigation";
@@ -14,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
 import { forEach } from "jszip";
+import { toast } from "react-toastify";
+import { LoadingButton } from "@mui/lab";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
@@ -34,7 +36,7 @@ export default function Popular_car() {
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -46,9 +48,9 @@ export default function Popular_car() {
     try {
       const res = await request.get(`${REST.CARS}cars/1?page=${page + 1}`);
       setPopular(res?.data);
-      setPage(prevPage => prevPage + 1);
+      setPage((prevPage) => prevPage + 1);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -72,17 +74,21 @@ export default function Popular_car() {
             >
               <div className="head_card">
                 <p>{e?.brand}</p>
-                {console.log()}
+
                 <CustomizedRating />
               </div>
               <div className="food_card">
                 <p>
-                  AED{e?.price_use}/ <span>day</span>
+                  AED{e?.price_arab}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}
-                  <Button
-                    onLoad={isLoading}
+                  <LoadingButton
+                    loading={isLoading}
+                    loadingIndicator={
+                      <CircularProgress color="secondary" size={20} />
+                    }
+                    loadingPosition="end"
                     onClick={() =>
                       dispatch({
                         type: "add-to-cart",
@@ -96,7 +102,7 @@ export default function Popular_car() {
                     style={{ background: "#FEC31D" }}
                   >
                     Rent Now
-                  </Button>
+                  </LoadingButton>
                 </Link>
               </div>
             </li>
@@ -106,6 +112,11 @@ export default function Popular_car() {
       <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
+          loading={isLoading}
+          loadingIndicator={
+            <CircularProgress color="secondary" size={20} />
+          }
+          loadingPosition="end"
         type="submit"
         className="btn"
         variant="text"

@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import "./Exclusive_car.scss";
@@ -10,12 +10,12 @@ import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
+import { toast } from "react-toastify";
 
 export default function Exclusive_car() {
-
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
-  const [isLoading,setIsLoading]=useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -29,80 +29,91 @@ export default function Exclusive_car() {
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
   }
+
   const handlePage = async () => {
     setPage(1);
     setIsLoading(true);
     try {
       const res = await request.get(`${REST.CARS}cars/4?page=${page + 1}`);
       setPopular(res?.data);
-      setPage(prevPage => prevPage + 1);
+      setPage((prevPage) => prevPage + 1);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
   };
   return (
     <div className="card_cars">
-    <ul className="popular_car">
-      {isLoading ? (
-        <Loading />
-      ) : (
-        popular.map((e) => (
-          <li
-            key={e.id}
-            style={{
-              backgroundImage: `url(https://${e?.image[0]?.body.replace("/home/portofin/", "")})`,
-            }}
-          >
-            <div className="head_card">
-              <p>{e?.brand}</p>
-              {console.log()}
-              <CustomizedRating />
-            </div>
-            <div className="food_card">
-              <p>
-                AED{e?.price_use}/ <span>day</span>
-              </p>
-              <Link href={`order/${e?.id}`}>
-                {" "}
-                <Button
-                  onClick={() =>
-                    dispatch({
-                      type: "add-to-cart",
-                      payload: e?.id,
-                      products: popular,
-                      // navigate:navigate
-                    })
-                  }
-                  type="submit"
-                  variant="contained"
-                  style={{ background: "#FEC31D" }}
-                >
-                  Rent Now
-                </Button>
-              </Link>
-            </div>
-          </li>
-        ))
-      )}
-    </ul>
-    <CustomSwiper popular={popular} loading={isLoading}/>
+      <ul className="popular_car">
+        {isLoading ? (
+          <Loading />
+        ) : (
+          popular.map((e) => (
+            <li
+              key={e.id}
+              style={{
+                backgroundImage: `url(https://${e?.image[0]?.body.replace(
+                  "/home/portofin/",
+                  ""
+                )})`,
+              }}
+            >
+              <div className="head_card">
+                <p>{e?.brand}</p>
 
-    <Button
-      type="submit"
-      className="btn"
-      variant="text"
-      onClick={handlePage}
-      style={{ backgroundColor: "var(--white)", color: "" }}
-    >
-      Show more
-    </Button>
-  </div>
+                <CustomizedRating />
+              </div>
+              <div className="food_card">
+                <p>
+                  AED{e?.price_arab}/ <span>day</span>
+                </p>
+                <Link href={`order/${e?.id}`}>
+                  {" "}
+                  <Button
+                    loading={isLoading}
+                    loadingIndicator={
+                      <CircularProgress color="secondary" size={20} />
+                    }
+                    loadingPosition="end"
+                    onClick={() =>
+                      dispatch({
+                        type: "add-to-cart",
+                        payload: e?.id,
+                        products: popular,
+                        // navigate:navigate
+                      })
+                    }
+                    type="submit"
+                    variant="contained"
+                    style={{ background: "#FEC31D" }}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
+              </div>
+            </li>
+          ))
+        )}
+      </ul>
+      <CustomSwiper popular={popular} loading={isLoading} />
+      <Button
+        loading={isLoading}
+        loadingIndicator={<CircularProgress color="secondary" size={20} />}
+        loadingPosition="end"
+        type="submit"
+        className="btn"
+        variant="text"
+        onClick={handlePage}
+        style={{ backgroundColor: "var(--white)", color: "" }}
+      >
+        Show more
+      </Button>
+    </div>
   );
 }

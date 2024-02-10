@@ -152,7 +152,12 @@ img{
   align-items: center !important;
   gap: 8px !important;
 }
+.MuiLoadingButton-loadingIndicator{
+  svg{
 
+    color: #0e52db !important;
+  }
+}
 @media (max-width:990px) {
   .card_cars{
     padding: 40px 1px 80px !important;

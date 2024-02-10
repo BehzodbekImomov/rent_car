@@ -8,7 +8,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow } from "swiper/modules";
 import CustomizedRating from "../Rating";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import Link from "next/link";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
@@ -55,16 +55,21 @@ export default function CustomSwiper({ popular, loading }) {
               >
                 <div className="head_card">
                   <p>{e?.brand}</p>
-                  {console.log()}
+                
                   <CustomizedRating />
                 </div>
                 <div className="food_card">
                   <p>
-                    AED{e?.price_use}/ <span>day</span>
+                    AED{e?.price_arab}/ <span>day</span>
                   </p>
                   <Link href={`order/${e?.id}`}>
                     {" "}
                     <Button
+                        loading={loading}
+                        loadingIndicator={
+                          <CircularProgress color="secondary" size={20} />
+                        }
+                        loadingPosition="end"
                       onClick={() =>
                         dispatch({
                           type: "add-to-cart",

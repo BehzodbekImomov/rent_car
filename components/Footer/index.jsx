@@ -9,13 +9,20 @@ export default function Footer() {
         <div className="foot_content">
           <ul>
             <li>
-              <Image src="/images/logo.png" width={73} height={33} alt="logo" />
-              <p>
-                Our vision is to provide convenience <br /> and help increase
-                your sales business.
-              </p>
+              <Link href="#">
+                <Image
+                  src="/images/logo.png"
+                  width={73}
+                  height={33}
+                  alt="logo"
+                />
+              </Link>
+              <p>Our goal is to make your dream come true</p>
               <div className="network">
-                <a href="" target="_blank">
+                <a
+                  href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                  target="_blank"
+                >
                   <Image
                     src="/svg/facebook.svg"
                     width={53}
@@ -23,36 +30,67 @@ export default function Footer() {
                     alt="logo"
                   />
                 </a>
-                <Image
-                  src="/svg/twitter.svg"
-                  width={53}
-                  height={53}
-                  alt="logo"
-                />
-                <Image
-                  src="/svg/instagram.svg"
-                  width={53}
-                  height={53}
-                  alt="logo"
-                />
+                <a
+                  href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                  target="_blank"
+                >
+                  <Image
+                    src="/svg/twitter.svg"
+                    width={53}
+                    height={53}
+                    alt="logo"
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                  target="_blank"
+                >
+                  <Image
+                    src="/svg/instagram.svg"
+                    width={53}
+                    height={53}
+                    alt="logo"
+                  />
+                </a>
               </div>
             </li>
             <li>
               <h4>About</h4>
-              <p>How it works </p>
+              <Link href="#">How it works </Link>
             </li>
 
             <li>
               <h4>Socials</h4>
-              <p>Discord</p>
-              <p>Instagram</p>
-              <p>Twitter</p>
-              <p>Facebook</p>
+
+              <Link
+                href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                target="_blank"
+              >
+                Instagram
+              </Link>
+              <Link
+                href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                target="_blank"
+              >
+                Twitter
+              </Link>
+              <Link
+                href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
+                target="_blank"
+              >
+                Facebook
+              </Link>
             </li>
           </ul>
         </div>
         <div className="line"></div>
         <div className="food_end">
+          <Link
+            href="https://maps.app.goo.gl/BpqwZZWG9rqxok3fA"
+            target="_blank"
+          >
+            Our Locations
+          </Link>
           <Link href="#">Privacy & Policy</Link>
           <Link href="#">Terms & Condition</Link>
         </div>

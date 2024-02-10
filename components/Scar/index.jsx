@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import "./S.scss";
@@ -10,6 +10,7 @@ import { carContext } from "@/context/CarContext";
 import { request } from "@/request";
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
+import { toast } from "react-toastify";
 
 export default function Scar() {
 
@@ -29,7 +30,7 @@ export default function Scar() {
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -43,7 +44,7 @@ export default function Scar() {
       setPopular(res?.data);
       setPage(prevPage => prevPage + 1);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -72,11 +73,16 @@ export default function Scar() {
               </div>
               <div className="food_card">
                 <p>
-                AED{e?.price_use}/ <span>day</span>
+                AED{e?.price_arab}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <Button
+                      loading={isLoading}
+                      loadingIndicator={
+                        <CircularProgress color="secondary" size={20} />
+                      }
+                      loadingPosition="end"
                     onClick={() =>
                       dispatch({
                         type: "add-to-cart",
@@ -100,6 +106,11 @@ export default function Scar() {
       <CustomSwiper popular={popular} loading={isLoading}/>
 
       <Button
+          loading={isLoading}
+          loadingIndicator={
+            <CircularProgress color="secondary" size={20} />
+          }
+          loadingPosition="end"
         type="submit"
         className="btn"
         variant="text"

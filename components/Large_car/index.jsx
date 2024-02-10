@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import "./Large_car.scss";
@@ -10,6 +10,7 @@ import { request } from "@/request";
 import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
+import { toast } from "react-toastify";
 
 export default function Large_car() {
   const { dispatch } = useContext(carContext);
@@ -28,7 +29,7 @@ export default function Large_car() {
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -42,7 +43,7 @@ export default function Large_car() {
       setPopular(res?.data);
       setPage(prevPage => prevPage + 1);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message);
     } finally {
       setIsLoading(false);
     }
@@ -66,16 +67,21 @@ export default function Large_car() {
               {console.log(e?.image[0]?.body.replace("/home/portofin/", ""))}
               <div className="head_card">
                 <p>{e?.brand}</p>
-                {console.log()}
+               
                 <CustomizedRating />
               </div>
               <div className="food_card">
                 <p>
-                  AED{e?.price_use}/ <span>day</span>
+                  AED{e?.price_arab}/ <span>day</span>
                 </p>
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <Button
+                      loading={isLoading}
+                      loadingIndicator={
+                        <CircularProgress color="secondary" size={20} />
+                      }
+                      loadingPosition="end"
                     onClick={() =>
                       dispatch({
                         type: "add-to-cart",
@@ -99,6 +105,11 @@ export default function Large_car() {
       <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
+          loading={isLoading}
+          loadingIndicator={
+            <CircularProgress color="secondary" size={20} />
+          }
+          loadingPosition="end"
         type="submit"
         className="btn"
         variant="text"
