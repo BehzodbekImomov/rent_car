@@ -10,15 +10,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Swiger.scss";
 
+
 export default function CarouselCustom() {
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
-      return (
-        "<span class={'" + className + "'}><div className='circle'></div></span>"
-
-      );
-    },
+    // renderBullet: function (index, className) {
+    //   return (
+    //     '<span class="' + className + '"><div className="circle"></div></span>'
+    //   );
+    // },
   };
 
   return (
