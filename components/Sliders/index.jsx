@@ -15,7 +15,8 @@ export default function CarouselCustom() {
     clickable: true,
     renderBullet: function (index, className) {
       return (
-        '<span class="' + className + '"><div className="circle"></div></span>'
+        '<span class="' + className + '"><div className=&quot;circle&quot;></div></span>'
+
       );
     },
   };
