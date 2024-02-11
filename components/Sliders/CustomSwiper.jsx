@@ -14,13 +14,12 @@ import { carContext } from "@/context/CarContext";
 import Loading from "@/app/(public)/loading";
 
 import "./styles.scss";
-// import { REST } from "@/constants/enpoint";
+import { REST } from "@/constants/enpoint";
 
-
+// import required modules
 
 export default function CustomSwiper({ popular, loading }) {
   const { dispatch } = useContext(carContext);
- 
   return (
     <>
       {loading ? (
