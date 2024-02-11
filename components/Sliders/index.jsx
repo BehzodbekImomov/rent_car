@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Swiger.scss";
 
-
 export default function CarouselCustom() {
   const pagination = {
     clickable: true,
