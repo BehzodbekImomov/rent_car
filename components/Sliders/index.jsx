@@ -14,7 +14,11 @@ import "./Swiger.scss";
 export default function CarouselCustom() {
   const pagination = {
     clickable: true,
-   
+    renderBullet: function (index, className) {
+      return (
+        '<span class="' + className + '"><div className="circle"></div></span>'
+      );
+    },
   };
 
   return (
