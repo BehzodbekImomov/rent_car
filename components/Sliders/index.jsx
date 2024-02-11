@@ -96,7 +96,7 @@ export default function CustomCarousel() {
           </div>
           <div className="desc_scrool">
             <p className="desc">
-              When I need a car I always turn to portofino. You won't find cars
+              When I need a car I always turn to portofino. You won`&apos;`t find cars
               like this at these prices anywhere else.
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function CustomCarousel() {
           </div>
           <div className="desc_scrool">
             <p className="desc">
-              Luxury cars, reasonable prices and quality service - that's all
+              Luxury cars, reasonable prices and quality service - that`&apos;`s all
               about portofino
             </p>
           </div>
