@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "./Swiger.scss";
 
 
-export default function CarouselCustom() {
+export default function CustomCarousel() {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
