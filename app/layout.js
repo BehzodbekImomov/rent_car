@@ -4,7 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import CarContext from "@/context/CarContext";
 import Loading from "./(public)/loading";
 import IdContext from "@/context/IdContext";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.css';
 import "../globals.css";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
             <IdContext>
               <CarContext>
-          <ToastContainer/>
+          {/* <ToastContainer/> */}
                
                 {children}
         

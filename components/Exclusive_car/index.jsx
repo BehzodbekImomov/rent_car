@@ -43,7 +43,8 @@ export default function Exclusive_car() {
       setPopular(res?.data);
       setPage((prevPage) => prevPage + 1);
     } catch (err) {
-      toast.error(err?.message);
+      // toast.error(err?.message);
+      console.log(err);
     } finally {
       setIsLoading(false);
     }

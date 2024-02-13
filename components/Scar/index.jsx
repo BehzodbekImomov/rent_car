@@ -30,7 +30,8 @@ export default function Scar() {
       setPopular(res?.data);
       setIsLoading(false);
     } catch (err) {
-      toast.error(err?.message);
+      // toast.error(err?.message);
+      console.log(err);
     } finally {
       setIsLoading(false);
     }
@@ -44,7 +45,8 @@ export default function Scar() {
       setPopular(res?.data);
       setPage(prevPage => prevPage + 1);
     } catch (err) {
-      toast.error(err?.message);
+      // toast.error(err?.message);
+      console.log(err);
     } finally {
       setIsLoading(false);
     }
