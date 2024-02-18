@@ -1,10 +1,14 @@
-import Image from "next/image";
-import "./Locations.scss";
+"use client"
 import NativeSelectGroup from "../Inputs/Select/NativeSelect";
 import { Button } from "@mui/material";
 import DateTime from "../Inputs/Select/DateTime";
+import { useNavigate } from "react-router-dom";
+
+import "./Locations.scss";
+import Link from "next/link";
 
 export default function Locations() {
+
   return (
     <section className="loc">
       <div className="container_custom">
@@ -53,13 +57,16 @@ export default function Locations() {
                 
                
                 <div className="btn">
+                  <Link href="#brands">
                   <Button
                     variant="contained"
                     style={{ background: "#FEC31D" }}
                     className="search_btn"
+                   
                   >
                     Search
                   </Button>
+                  </Link>
                 </div>
               </ul>
             </li>

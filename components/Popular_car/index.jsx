@@ -9,20 +9,20 @@ import { carContext } from "@/context/CarContext";
 import { Button, CircularProgress } from "@mui/material";
 
 import "./Popular_car.scss";
-import { useParams } from "next/navigation";
-import { useNavigate } from "react-router-dom";
+
 import Loading from "@/app/(public)/loading";
 import { REST } from "@/constants/enpoint";
-import { forEach } from "jszip";
-import { toast } from "react-toastify";
+
 import { LoadingButton } from "@mui/lab";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
   const [popular, setPopular] = useState([]);
-  const [data, setData] = useState([]);
+
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   // const navigate = useNavigate();
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function Popular_car() {
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <LoadingButton
-                    loading={isLoading}
+                    loading={loading}
                     loadingIndicator={
                       <CircularProgress color="secondary" size={20} />
                     }
@@ -96,8 +96,9 @@ export default function Popular_car() {
                         type: "add-to-cart",
                         payload: e?.id,
                         products: popular,
-                        // navigate:navigate
+                        
                       })
+                     
                     }
                     type="submit"
                     variant="contained"

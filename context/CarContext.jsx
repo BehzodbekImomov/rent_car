@@ -18,6 +18,7 @@ const reducer = (state, { type, payload, products, data }) => {
       return {
         ...state,
         carProducts: [{ ...product }],
+      
       };
     }
     case "id": {

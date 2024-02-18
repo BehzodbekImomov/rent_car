@@ -18,7 +18,7 @@ export default function Home() {
 <About_work/>
 <Cars/>
 <Informations/>
-<Advantage/>
+{/* <Advantage/> */}
 </main>
 </>
   );
