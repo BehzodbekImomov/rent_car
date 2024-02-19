@@ -68,12 +68,10 @@ export default function Popular_car() {
             <li
               key={e.id}
               style={{
-                backgroundImage: `url(https://${e?.image[0]?.body.replace(
-                  "/home/portofin/",
-                  ""
-                )})`,
+                backgroundImage:`url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
               }}
             >
+         
               <div className="head_card">
                 <p>{e?.brand}</p>
 
@@ -94,11 +92,9 @@ export default function Popular_car() {
                     onClick={() =>
                       dispatch({
                         type: "add-to-cart",
-                        payload: e?.id,
+                        payload: e?.image[0]?.id,
                         products: popular,
-                        
                       })
-                     
                     }
                     type="submit"
                     variant="contained"
@@ -115,11 +111,9 @@ export default function Popular_car() {
       <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
-          loading={isLoading}
-          loadingIndicator={
-            <CircularProgress color="secondary" size={20} />
-          }
-          loadingPosition="end"
+        loading={isLoading}
+        loadingIndicator={<CircularProgress color="secondary" size={20} />}
+        loadingPosition="end"
         type="submit"
         className="btn"
         variant="text"

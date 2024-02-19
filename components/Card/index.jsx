@@ -4,10 +4,12 @@ import { carContext } from "@/context/CarContext";
 import CarCarousel from "../Sliders/Car_carusel";
 import Image from "next/image";
 
-import "./Card.scss";
 import { request } from "@/request";
 import { REST } from "@/constants/enpoint";
 import { Button, CircularProgress } from "@mui/material";
+
+import "./Card.scss";
+
 export default function Card_Custom({ id }) {
   // const { carProducts } = useContext(carContext);
   const [popular, setPopular] = useState([]);

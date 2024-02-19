@@ -60,13 +60,10 @@ export default function Large_car() {
             <li
               key={e.id}
               style={{
-                backgroundImage: `url(https://${e?.image[0]?.body.replace(
-                  "/home/portofin/",
-                  ""
-                )})`,
+                backgroundImage:`url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
               }}
             >
-              {console.log(e?.image[0]?.body.replace("/home/portofin/", ""))}
+             
               <div className="head_card">
                 <p>{e?.brand}</p>
                
