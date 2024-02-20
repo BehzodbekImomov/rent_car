@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./Footer.scss";
+import LanguageChanger from "../LanguageChanger";
 
 export default function Footer() {
   return (
@@ -81,12 +82,15 @@ export default function Footer() {
                 Facebook
               </Link>
             </li>
+            <li className="btn_lang">
+              <LanguageChanger />
+            </li>
           </ul>
         </div>
         <div className="line"></div>
         <div className="food_end">
           <Link
-          id="location_id"
+            id="location_id"
             href="https://maps.app.goo.gl/BpqwZZWG9rqxok3fA"
             target="_blank"
           >

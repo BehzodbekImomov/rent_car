@@ -10,10 +10,11 @@ import { Button, CircularProgress } from "@mui/material";
 
 import "./Popular_car.scss";
 
-import Loading from "@/app/(public)/loading";
+import Loading from "@/app/[locale]/(public)/loading";
 import { REST } from "@/constants/enpoint";
 
 import { LoadingButton } from "@mui/lab";
+import { useTranslation } from "react-i18next";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
@@ -22,8 +23,7 @@ export default function Popular_car() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  // const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     getData();
@@ -68,10 +68,9 @@ export default function Popular_car() {
             <li
               key={e.id}
               style={{
-                backgroundImage:`url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
+                backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
               }}
             >
-         
               <div className="head_card">
                 <p>{e?.brand}</p>
 
@@ -100,7 +99,7 @@ export default function Popular_car() {
                     variant="contained"
                     style={{ background: "#FEC31D" }}
                   >
-                    Rent Now
+                    Rent now
                   </LoadingButton>
                 </Link>
               </div>
@@ -120,7 +119,7 @@ export default function Popular_car() {
         onClick={handlePage}
         style={{ backgroundColor: "var(--white)", color: "" }}
       >
-        Show more
+        {t("car_button")}
       </Button>
     </div>
   );

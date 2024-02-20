@@ -6,6 +6,7 @@ import { Button } from "@nextui-org/react";
 import "./Navigate.scss";
 
 import TemporaryDrawer from "../Drawer";
+import LanguageChanger from "../LanguageChanger";
 
 const Navigate = () => {
   return (
@@ -53,43 +54,48 @@ const Navigate = () => {
           <li>
             <Button type="submit">Log In</Button>
           </li> */}
+          <LanguageChanger />
         </ul>
 
-        <TemporaryDrawer id="burger"
+        <TemporaryDrawer
+          id="burger"
           icon={<MenuIcon sx={{ color: "var(--white)" }} />}
           bg_color={"var(--black)"}
           title={
-            <ul className="menu">
-              <li>
-                {" "}
-                <a className="anchor" href="/">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className="anchor" href="#rental">
-                  Rental Detals
-                </a>
-              </li>
-              <li>
-                <a className="anchor" href="#choose">
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a className="anchor" href="#testmonial">
-                  Testimonial
-                </a>
-              </li>
-              <li>
-                {" "}
-                <a className="anchor" href="#brands">
-                  Brands{" "}
-                  {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
-                </a>
-              </li>
-          
-            </ul>
+            <>
+              <ul className="menu">
+                <li>
+                  {" "}
+                  <a className="anchor" href="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a className="anchor" href="#rental">
+                    Rental Detals
+                  </a>
+                </li>
+                <li>
+                  <a className="anchor" href="#choose">
+                    Why Choose Us
+                  </a>
+                </li>
+                <li>
+                  <a className="anchor" href="#testmonial">
+                    Testimonial
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a className="anchor" href="#brands">
+                    Brands{" "}
+                    {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
+                  </a>
+                </li>
+                <a href=""></a>
+              </ul>
+             
+            </>
           }
         />
       </div>

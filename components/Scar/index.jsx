@@ -8,9 +8,10 @@ import CustomSwiper from "../Sliders/CustomSwiper";
 import Link from "next/link";
 import { carContext } from "@/context/CarContext";
 import { request } from "@/request";
-import Loading from "@/app/(public)/loading";
+import Loading from "@/app/[locale]/(public)/loading";
 import { REST } from "@/constants/enpoint";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 export default function Scar() {
 
@@ -18,7 +19,7 @@ export default function Scar() {
   const [popular, setPopular] = useState([]);
   const [isLoading,setIsLoading]=useState(false)
   const [page, setPage] = useState(1);
-
+  const{t}=useTranslation()
   useEffect(() => {
     getData();
   }, []);
@@ -116,7 +117,7 @@ export default function Scar() {
         onClick={handlePage}
         style={{ backgroundColor: "var(--white)", color: "" }}
       >
-        Show more
+        {t('car_button')}
       </Button>
     </div>
   );
