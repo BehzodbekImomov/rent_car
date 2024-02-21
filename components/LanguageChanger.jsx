@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
-import i18nConfig from '@/i18nConfig';
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import i18nConfig from "@/i18nConfig";
 
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
@@ -11,7 +11,7 @@ export default function LanguageChanger() {
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const newLocale = e.target.value;
 
     // set cookie for next-i18n-router
@@ -26,7 +26,7 @@ export default function LanguageChanger() {
       currentLocale === i18nConfig.defaultLocale &&
       !i18nConfig.prefixDefault
     ) {
-      router.push('/' + newLocale + currentPathname);
+      router.push("/" + newLocale + currentPathname);
     } else {
       router.push(
         currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
@@ -37,11 +37,10 @@ export default function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} defaultValue='en' value={currentLocale}>
-      <option disabled value={1}></option>
+    <select onChange={handleChange} defaultValue="en" value={currentLocale}>
+      <option disabled></option>
       <option value="ru">Russian</option>
       <option value="en">English</option>
-      
     </select>
   );
 }
