@@ -36,11 +36,17 @@ export default function LanguageChanger() {
     router.refresh();
   };
 
+  const locales = ["ru", "en"];
+
   return (
-    <select onChange={handleChange} defaultValue="en" value={currentLocale}>
-      <option disabled></option>
-      <option value="ru">Russian</option>
+    <select
+      className="translate_select"
+      onChange={handleChange}
+      value={currentLocale}
+      defaultValue="en"
+    >
       <option value="en">English</option>
+      <option value="ru">Russian</option>
     </select>
   );
 }

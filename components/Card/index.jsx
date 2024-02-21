@@ -9,9 +9,10 @@ import { REST } from "@/constants/enpoint";
 import { Button, CircularProgress } from "@mui/material";
 
 import "./Card.scss";
+import { useTranslation } from "react-i18next";
 
 export default function Card_Custom({ id }) {
-  // const { carProducts } = useContext(carContext);
+  const { t } = useTranslation();
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [booking, setBooking] = useState({
@@ -67,7 +68,6 @@ export default function Card_Custom({ id }) {
     }
   }
 
-  console.log(popular);
   return (
     <div className="order">
       <div className="container_custom">
@@ -78,7 +78,9 @@ export default function Card_Custom({ id }) {
           <div className="car_title">
             <span>{popular?.brand}</span>
             <h3>{popular?.model}</h3>
-            <p>{popular?.price_arab} AED/day</p>
+            <p>
+              {popular?.price_arab} {t("money")}
+            </p>
             <ul>
               <li>
                 <div className="box">
@@ -90,7 +92,7 @@ export default function Card_Custom({ id }) {
                     alt=""
                   />
                 </div>
-                <p>Doors:</p> <span>{popular?.doors}</span>
+                <p>{t("doors")}</p> <span>{popular?.doors}</span>
               </li>
               <li>
                 <div className="box">
@@ -102,7 +104,7 @@ export default function Card_Custom({ id }) {
                     alt=""
                   />
                 </div>
-                <p>Transmission:</p>{" "}
+                <p>{t("transmission")}</p>{" "}
                 <span>
                   {popular.gear &&
                     popular.gear.replace("matic transmission", "")}
@@ -118,7 +120,7 @@ export default function Card_Custom({ id }) {
                     alt=""
                   />
                 </div>
-                <p>Baggage:</p> <span>{popular?.baggage}</span>
+                <p>{t("baggage")}</p> <span>{popular?.baggage}</span>
               </li>
 
               <li>
@@ -131,7 +133,7 @@ export default function Card_Custom({ id }) {
                     alt=""
                   />
                 </div>
-                <p>Fuel:</p> <span>{popular?.fuel}</span>
+                <p>{t("fuel")}</p> <span>{popular?.fuel}</span>
               </li>
             </ul>
           </div>
@@ -140,8 +142,8 @@ export default function Card_Custom({ id }) {
           <p>{popular?.description}</p>
         </div>
         <div className="booking">
-          <h3>Booking</h3>
-          <h4>Please fill in the details</h4>
+          <h3>{t("booking")}</h3>
+          <h4>{t("booking_desc")}</h4>
           <form onSubmit={submit}>
             <div className="inputs">
               <input
@@ -149,28 +151,28 @@ export default function Card_Custom({ id }) {
                 name="customer_name"
                 value={booking.customer_name}
                 type="text"
-                placeholder="Your name "
+                placeholder={t("your_name")}
               />
               <input
                 onChange={handleChange}
                 name="email"
                 value={booking.email}
                 type="email"
-                placeholder="Your E-mail "
+                placeholder={t("your_email")}
               />
               <input
                 onChange={handleChange}
                 name="contact_number"
                 value={booking.contact_number}
                 type="tel"
-                placeholder="Your Phone "
+                placeholder={t("your_number")}
               />
               <input
                 onChange={handleChange}
                 name="from_destination"
                 value={booking.from_destination}
                 type="text"
-                placeholder="Your City "
+                placeholder={t('your_sity')}
               />
             </div>
             <Button
@@ -183,7 +185,7 @@ export default function Card_Custom({ id }) {
               onClick={handleClick}
               type="submit"
             >
-              order
+              {t("order")}
             </Button>
           </form>
         </div>

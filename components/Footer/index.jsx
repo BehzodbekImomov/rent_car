@@ -1,9 +1,13 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import "./Footer.scss";
-import LanguageChanger from "../LanguageChanger";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const{t}=useTranslation()
   return (
     <footer className="footer">
       <div className="container_custom foot">
@@ -18,7 +22,7 @@ export default function Footer() {
                   alt="logo"
                 />
               </Link>
-              <p>Our goal is to make your dream come true</p>
+              <p>{t("footer")}</p>
               <div className="network">
                 <a
                   href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
@@ -56,34 +60,31 @@ export default function Footer() {
               </div>
             </li>
             <li>
-              <h4>About</h4>
-              <Link href="#">How it works </Link>
+              <h4>{t("footer1")}</h4>
+              <Link href="#">{t("footer1_desc")} </Link>
             </li>
 
             <li>
-              <h4>Socials</h4>
+              <h4>{t("footer2")}</h4>
 
               <Link
                 href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
                 target="_blank"
               >
-                Instagram
+                {t("inst")}
               </Link>
               <Link
                 href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
                 target="_blank"
               >
-                Twitter
+                {t("twit")}
               </Link>
               <Link
                 href="https://www.instagram.com/portofino_luxurycarrental?igsh=aWpoeHJlaG5mYTk2"
                 target="_blank"
               >
-                Facebook
+                {t("face")}
               </Link>
-            </li>
-            <li className="btn_lang">
-              <LanguageChanger />
             </li>
           </ul>
         </div>
@@ -94,10 +95,10 @@ export default function Footer() {
             href="https://maps.app.goo.gl/BpqwZZWG9rqxok3fA"
             target="_blank"
           >
-            Our Locations
+            {t("our_loc")}
           </Link>
-          <Link href="#">Privacy & Policy</Link>
-          <Link href="#">Terms & Condition</Link>
+          <Link href="#">{t("foot_end1")}</Link>
+          <Link href="#">{t('foot_end2')}</Link>
         </div>
       </div>
     </footer>

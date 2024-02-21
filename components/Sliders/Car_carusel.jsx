@@ -13,9 +13,7 @@ import "./Car_carousel.scss";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { carContext } from "@/context/CarContext";
-import Loading from "@/app/(public)/loading";
-import Image from "next/image";
+import Loading from "@/app/[locale]/(public)/loading";
 
 export default function CarCarousel({ data, loading }) {
   // const { carProducts } = useContext(carContext);
@@ -42,9 +40,8 @@ export default function CarCarousel({ data, loading }) {
           <Loading />
         ) : (
           data.map((e) => (
-            <SwiperSlide key={e?.id}>
-              {console.log(e)}
-              <figure>
+            <SwiperSlide style={{ objectFit: "cover" }} key={e?.id}>
+              <figure style={{ objectFit: "cover", height: "100%" }}>
                 <img
                   src={`https://backend.intechs.uz/car/v1/image/${e?.id}`}
                   alt="img"
@@ -67,8 +64,8 @@ export default function CarCarousel({ data, loading }) {
           <Loading />
         ) : (
           data.map((e) => (
-            <SwiperSlide key={e?.id}>
-              <figure>
+            <SwiperSlide style={{ objectFit: "cover" }} key={e?.id}>
+              <figure style={{ objectFit: "cover", height: "100%" }}>
                 <img
                   src={`https://backend.intechs.uz/car/v1/image/${e?.id}`}
                   alt="img"

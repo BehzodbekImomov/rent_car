@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,7 +21,12 @@ import { useTranslation } from "react-i18next";
 
 export default function CustomSwiper({ popular, loading }) {
   const { dispatch } = useContext(carContext);
-  const{t}=useTranslation()
+  const { t } = useTranslation();
+
+  // useEffect(() => {
+  //   const swiper = new Swiper("mySwiper", {});
+  //   swiper.update();
+  // }, []);
   return (
     <>
       {loading ? (
@@ -80,7 +85,7 @@ export default function CustomSwiper({ popular, loading }) {
                       variant="contained"
                       style={{ background: "#FEC31D" }}
                     >
-                     {t('car_button')}
+                      {t("car_button")}
                     </Button>
                   </Link>
                 </div>

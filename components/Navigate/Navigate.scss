@@ -89,6 +89,14 @@ nav {
   background: #fec31d;
 }
 
+.nav_btn_lang{
+  display: none;
+  align-items: center;
+  .lan{
+    display: none;
+  }
+}
+
 /* >>>>>>>>>>>>>>MEDIA <<<<<<<<<<<<<<  */
 
 @media (min-width: 992px) {
@@ -100,6 +108,8 @@ nav {
   .mui-1ujsas3{
     display: none !important; 
   }
+
+
   }
 
 
@@ -177,6 +187,14 @@ nav {
   .mui-1ab2xsx{
     background-color: var(--black) !important;
   }
+  .nav_btn_lang{
+    display: flex;
+    align-items: center;
+    .lan{
+      display: block;
+    }
+  }
+  
 }
 @media (max-width: 576px) {
   nav {

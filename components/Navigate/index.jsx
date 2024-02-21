@@ -1,14 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Button } from "@nextui-org/react";
 
 import "./Navigate.scss";
 
 import TemporaryDrawer from "../Drawer";
 import LanguageChanger from "../LanguageChanger";
+import { useTranslation } from "react-i18next";
 
 const Navigate = () => {
+  const { t } = useTranslation();
   return (
     <nav id="nav">
       <div className="container_custom navigations ">
@@ -19,85 +22,69 @@ const Navigate = () => {
           <li>
             {" "}
             <a className="anchor" href="/">
-              Home
+              {t("common:home")}
             </a>
           </li>
           <li>
             <a className="anchor" href="#rental">
-              Rental Detals
+              {t("common:rental")}
             </a>
           </li>
           <li>
             <a className="anchor" href="#choose">
-              Why Choose Us
+              {t("common:why")}
             </a>
           </li>
-          <li>
-            <a className="anchor" href="#testmonial">
-              Testimonial
-            </a>
-          </li>
+
           <li>
             {" "}
             <a className="anchor" href="#brands">
-              Brands{" "}
+              {t("common:brands")}
               {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
             </a>
           </li>
-          {/* <li className="registr">
-            <a className="anchor" href="/">
-              {" "}
-              <div className="line"></div>
-              Register
-            </a>
-          </li>
-          <li>
-            <Button type="submit">Log In</Button>
-          </li> */}
+
           <LanguageChanger />
         </ul>
+        <div className="nav_btn_lang">
+          <div className="lan">
+            <LanguageChanger />
+          </div>
+          <TemporaryDrawer
+            id="burger"
+            icon={<MenuIcon sx={{ color: "var(--white)" }} />}
+            bg_color={"var(--black)"}
+            title={
+              <>
+                <ul className="menu">
+                  <li>
+                    {" "}
+                    <a className="anchor" href="/">
+                      {t("common:home")}
+                    </a>
+                  </li>
+                  <li>
+                    <a className="anchor" href="#rental">
+                      {t("common:rental")}
+                    </a>
+                  </li>
+                  <li>
+                    <a className="anchor" href="#choose">
+                      {t("common:why")}
+                    </a>
+                  </li>
 
-        <TemporaryDrawer
-          id="burger"
-          icon={<MenuIcon sx={{ color: "var(--white)" }} />}
-          bg_color={"var(--black)"}
-          title={
-            <>
-              <ul className="menu">
-                <li>
-                  {" "}
-                  <a className="anchor" href="/">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a className="anchor" href="#rental">
-                    Rental Detals
-                  </a>
-                </li>
-                <li>
-                  <a className="anchor" href="#choose">
-                    Why Choose Us
-                  </a>
-                </li>
-                <li>
-                  <a className="anchor" href="#testmonial">
-                    Testimonial
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a className="anchor" href="#brands">
-                    Brands{" "}
-                    {/* <Image src="/svg/vector.svg" width={15} height={6} alt="" /> */}
-                  </a>
-                </li>
-                <a href=""></a>
-              </ul>
-             
-            </>
-          }
-        />
+                  <li>
+                    {" "}
+                    <a className="anchor" href="#brands">
+                      {t("common:brands")}
+                    </a>
+                  </li>
+                </ul>
+              </>
+            }
+          />
+        </div>
       </div>
     </nav>
   );
