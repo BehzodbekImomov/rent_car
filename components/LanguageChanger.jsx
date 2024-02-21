@@ -37,7 +37,7 @@ export default function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} defaultValue={1} value={currentLocale}>
+    <select onChange={handleChange} defaultValue='en' value={currentLocale}>
       <option disabled value={1}></option>
       <option value="ru">Russian</option>
       <option value="en">English</option>
