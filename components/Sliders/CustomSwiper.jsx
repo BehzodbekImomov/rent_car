@@ -45,6 +45,7 @@ export default function CustomSwiper({ popular, loading }) {
         >
           {popular.map((e) => (
             <li
+            className="li_carousel"
               key={e.id}
               style={{
                 backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
