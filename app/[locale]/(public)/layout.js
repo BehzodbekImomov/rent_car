@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useState, useEffect } from "react";
 import initTranslations from "@/app/i18n";
-useState;
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { useParams } from "next/navigation";
+import Loading from "./loading";
 const i18nNamespaces = ["home", "common"];
 
 export default function PublicLayout({ children }) {
@@ -14,7 +14,7 @@ export default function PublicLayout({ children }) {
 
   useEffect(() => {
     const fetchTranslations = async () => {
-      console.log(await initTranslations(locale, i18nNamespaces));
+     
       const { t, resources } = await initTranslations(locale, i18nNamespaces);
       setTranslations({ t, resources });
     };
@@ -23,7 +23,7 @@ export default function PublicLayout({ children }) {
   }, [locale]);
 
   if (!translations) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   const { t, resources } = translations;

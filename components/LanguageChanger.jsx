@@ -36,7 +36,7 @@ export default function LanguageChanger() {
     router.refresh();
   };
 
-  const locales = ["ru", "en"];
+  const locales = [ "en","ru", "ar"];
 
   return (
     <select
@@ -47,6 +47,7 @@ export default function LanguageChanger() {
     >
       <option value="en">English</option>
       <option value="ru">Russian</option>
+      <option value="ar">Arabic</option>
     </select>
   );
 }

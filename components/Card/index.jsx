@@ -59,7 +59,7 @@ export default function Card_Custom({ id }) {
       setIsLoading(true);
       const res = await request.get(`${REST.CARS}car/${id}`);
       setPopular(res?.data);
-      // console.log(res);
+     
       setIsLoading(false);
     } catch (err) {
       console.log(err);

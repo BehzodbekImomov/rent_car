@@ -1,7 +1,7 @@
 const i18nConfig = {
-  locales: ['en', 'ru',],
-  defaultLocale: 'en',
-  prefixDefault:true
+  defaultLocale: "en",
+  locales: ["en", "ar","ru"],
+  autoPrefix:true
 };
 
-module.exports = i18nConfig;  
+export default  i18nConfig;
