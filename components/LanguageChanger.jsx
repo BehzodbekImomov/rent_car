@@ -47,7 +47,7 @@ export default function LanguageChanger() {
     >
       <option value="en">English</option>
       <option value="ru">Russian</option>
-      <option value="ar">Arabic</option>
+     
     </select>
   );
 }
