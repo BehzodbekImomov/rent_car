@@ -4,20 +4,17 @@
   padding-bottom: 50px;
   border-radius: 10px !important;
   display: none !important;
+  
 }
 // .swiper {
 
 // }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
+.carousel .slider-wrapper.axis-horizontal .slider .slide{
+  height: 400px;
 }
 
-.swiper-slide li {
+ li {
   display: block;
   background-repeat: no-repeat;
   object-fit: cover !important;
@@ -28,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   .head_card {
     display: flex;
     justify-content: space-between;
