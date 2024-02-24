@@ -59,7 +59,7 @@ export default function Card_Custom({ id }) {
       setIsLoading(true);
       const res = await request.get(`${REST.CARS}car/${id}`);
       setPopular(res?.data);
-     
+
       setIsLoading(false);
     } catch (err) {
       console.log(err);
@@ -147,6 +147,7 @@ export default function Card_Custom({ id }) {
           <form onSubmit={submit}>
             <div className="inputs">
               <input
+                required
                 onChange={handleChange}
                 name="customer_name"
                 value={booking.customer_name}
@@ -154,6 +155,7 @@ export default function Card_Custom({ id }) {
                 placeholder={t("your_name")}
               />
               <input
+                required
                 onChange={handleChange}
                 name="email"
                 value={booking.email}
@@ -161,6 +163,7 @@ export default function Card_Custom({ id }) {
                 placeholder={t("your_email")}
               />
               <input
+                required
                 onChange={handleChange}
                 name="contact_number"
                 value={booking.contact_number}
@@ -168,11 +171,12 @@ export default function Card_Custom({ id }) {
                 placeholder={t("your_number")}
               />
               <input
+                required
                 onChange={handleChange}
                 name="from_destination"
                 value={booking.from_destination}
                 type="text"
-                placeholder={t('your_sity')}
+                placeholder={t("your_sity")}
               />
             </div>
             <Button

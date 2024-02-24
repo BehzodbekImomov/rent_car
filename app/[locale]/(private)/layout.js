@@ -23,7 +23,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
 import XIcon from "@mui/icons-material/X";
 import CategoryIcon from "@mui/icons-material/Category";
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Link from "next/link";
 
 const drawerWidth = 240;
@@ -106,7 +106,7 @@ export default function PrivateLayout({ children }) {
   };
   return (
     <div className="container_custom">
-      <Box sx={{ display: "flex" }} >
+      <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
           <Toolbar>
@@ -127,8 +127,8 @@ export default function PrivateLayout({ children }) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open} >
-          <DrawerHeader sx={{backgroundColor:"#1976d2"}}>
+        <Drawer variant="permanent" open={open}>
+          <DrawerHeader sx={{ backgroundColor: "#1976d2" }}>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "rtl" ? (
                 <ChevronRightIcon />
@@ -137,64 +137,66 @@ export default function PrivateLayout({ children }) {
               )}
             </IconButton>
           </DrawerHeader>
-          <Divider sx={{backgroundColor:"var(--black)"}}/>
-          <List >
+          <Divider sx={{ backgroundColor: "var(--black)" }} />
+          <List>
             {/* {['', 'Brands', '', 'Orders'].map((text, index) => (
            
           ))} */}
             <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+              <Link href="dashboard">
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  {/* {index % 2 === 0 ?  : <XIcon />} */}
-                  {/* <DirectionsCarFilledIcon /> */}
-                  <CategoryIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Cathegories"
-                  sx={{ opacity: open ? 1 : 0,color:"white" }}
-                />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <Link href="create">
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {/* {index % 2 === 0 ?  : <XIcon />} */}
-                  <DirectionsCarFilledIcon />
-                  {/* <CategoryIcon /> */}
-                </ListItemIcon>
-                <ListItemText
-                  primary="Cars"
-                  sx={{ opacity: open ? 1 : 0 ,color:"white"}}
-                />
-              </ListItemButton>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {/* {index % 2 === 0 ?  : <XIcon />} */}
+                    {/* <DirectionsCarFilledIcon /> */}
+                    <CategoryIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Cathegories"
+                    sx={{ opacity: open ? 1 : 0, color: "white" }}
+                  />
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem disablePadding sx={{ display: "block" }}>
+              <Link href="create">
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {/* {index % 2 === 0 ?  : <XIcon />} */}
+                    <DirectionsCarFilledIcon />
+                    {/* <CategoryIcon /> */}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Cars"
+                    sx={{ opacity: open ? 1 : 0, color: "white" }}
+                  />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+            {/* <ListItem disablePadding sx={{ display: "block" }}>
               <Link href="createImg">
               <ListItemButton
                 sx={{
@@ -220,7 +222,7 @@ export default function PrivateLayout({ children }) {
                 />
               </ListItemButton>
               </Link>
-            </ListItem>
+            </ListItem> */}
           </List>
           {/* <Divider /> */}
           {/* <List>
@@ -249,7 +251,7 @@ export default function PrivateLayout({ children }) {
         </List> */}
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <DrawerHeader  />
+          <DrawerHeader />
           {children}
         </Box>
       </Box>

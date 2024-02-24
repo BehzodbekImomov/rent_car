@@ -1,15 +1,15 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
-
-import "./FormControl.scss";
 import { request } from "@/request";
 import { REST } from "@/constants/enpoint";
 import Link from "next/link";
-import { carContext } from "@/context/CarContext";
+
 import { idContext } from "@/context/IdContext";
+
+import "./FormControl.scss";
 export default function Custo_form() {
-  
   const { dispatch } = useContext(idContext);
   const [formSubmit, setFormSubmit] = useState({
     baggage: "",
@@ -24,7 +24,7 @@ export default function Custo_form() {
     price_euro: "",
     price_use: "",
   });
-
+  const router = useRouter();
   const handleChange = (e) => {
     setFormSubmit({ ...formSubmit, [e.target.name]: e.target.value });
   };
@@ -38,12 +38,20 @@ export default function Custo_form() {
     formSubmit.price_arab = Number(formSubmit.price_arab);
     formSubmit.price_euro = Number(formSubmit.price_euro);
     formSubmit.price_use = Number(formSubmit.price_use);
-    try {
-     const res= await request.post(`${REST.CARS}/cars`, formSubmit);
-     console.log(res);
-     dispatch({type:"id",data:res?.data?.id})
-    } catch (err) {
-      console.log(err.response.data.msg);
+
+   
+    if (Object.values(formSubmit).every((value) => value !== "")) {
+      try {
+        const res = await request.post(`${REST.CARS}/cars`, formSubmit);
+      
+        dispatch({ type: "id", data: res?.data?.id });
+        router.push("/createImg");
+      } catch (err) {
+        console.log(err.response.data.msg);
+      }
+    } else {
+      // Display an error message or prevent form submission
+      console.log("Please fill in all the form fields.");
     }
   };
 
@@ -155,10 +163,9 @@ export default function Custo_form() {
             placeholder="Price use"
             type="number"
           />
-
-          <button type="submit" onClick={handleClick}>
-            Create
-          </button>
+         
+            <button  type="submit" onClick={handleClick} >Create</button>
+        
         </form>
       </div>
     </div>
