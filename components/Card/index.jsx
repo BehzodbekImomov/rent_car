@@ -25,8 +25,18 @@ export default function Card_Custom({ id }) {
     getDataId();
   }, []);
 
-  const submit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      booking.customer_name === "" ||
+      booking.email === "" ||
+      booking.contact_number === "" ||
+      booking.from_destination === ""
+    ) {
+      console.log("Inputlar to'ldirilmagan");
+      return;
+    }
+    handleClick();
   };
 
   const handleChange = (e) => {
@@ -38,7 +48,7 @@ export default function Card_Custom({ id }) {
       setIsLoading(true);
 
       booking.car_id = Number(id);
-      console.log(booking);
+
       await request.post(`${REST.ORDERS}`, booking);
       setBooking({
         customer_name: "",
@@ -144,7 +154,7 @@ export default function Card_Custom({ id }) {
         <div className="booking">
           <h3>{t("booking")}</h3>
           <h4>{t("booking_desc")}</h4>
-          <form onSubmit={submit}>
+          <form onSubmit={handleSubmit}>
             <div className="inputs">
               <input
                 required
@@ -186,7 +196,7 @@ export default function Card_Custom({ id }) {
                 <CircularProgress color="secondary" size={20} />
               }
               loadingPosition="end"
-              onClick={handleClick}
+              // onClick={handleSubmit}
               type="submit"
             >
               {t("order")}
