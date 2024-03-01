@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 html,
 body {
   position: relative !important;
@@ -8,23 +8,22 @@ body {
   transition: all 5s ease-in;
   background-color: var(--black) !important;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
-  --dark:#000;
-  --black:#1A202C;
-  --white:#FFF;
-  --gray:#F6F7F9;
-  --gray2:#F3F3F3;
-  --yellow:#FEC31D;
+:root {
+  --dark: #000;
+  --black: #1a202c;
+  --white: #fff;
+  --gray: #f6f7f9;
+  --gray2: #f3f3f3;
+  --yellow: #fec31d;
 }
 
-
-.loadCont{
+.loadCont {
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -37,22 +36,19 @@ body {
   transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   opacity: 1;
   /* background-color: #1A202C; */
- 
 }
 
-
-.fadbeack{
+.fadbeack {
   position: fixed;
   bottom: 5px;
   right: 5px;
-z-index: 1000;
-
+  z-index: 1000;
 }
-.box_fad{
+.box_fad {
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background-color: #FEC31D;
+  background-color: #fec31d;
   box-shadow: 0px 0px 20px 5px rgb(29, 120, 190);
   display: flex;
   flex-direction: column;
@@ -60,32 +56,31 @@ z-index: 1000;
   justify-content: center;
 }
 
-
-ul{
+ul {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
-.container_custom{
+.container_custom {
   max-width: 1440px;
   margin: 0 auto;
   /* padding: 30px 50px; */
 }
-button{
+button {
   cursor: pointer;
 }
-.mui-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root::before{
+.mui-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root::before {
   /* content: "" !important; */
   border-bottom: none !important;
 }
-.mui-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+.mui-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   background-color: #1976d2 !important;
 }
-.mui-1l8j5k8{
+.mui-1l8j5k8 {
   background-color: #1976d2 !important;
 }
-.translate_select{
+.translate_select {
   min-width: 100px;
   padding: 10px;
   background-color: var(--yellow);
@@ -95,32 +90,88 @@ button{
   color: var(--gray);
   font-weight: 600;
   font-size: medium;
-  
 }
 
-
-@media (max-width:768px) {
-
-  .translate_select{
-  min-width: 80px;
-  padding: 8px;
-  font-size: small;
-  
+.loadingContainer {
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  opacity: 1;
 }
+.content {
+  position: relative;
+  z-index: 100000;
+  width: 110px;
+  height: 110px;
+  background: transparent;
+  border: px solid #3c3c3c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 111px;
+  font-family: sans-serif;
+  color: #fff000;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #fff000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-@media (max-width:576px) {
-  .box_fad{
+
+.content::before {
+  position: absolute;
+  content: "";
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 5px solid #fff000;
+  border-right: 5px solid #fff000;
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .translate_select {
+    min-width: 80px;
+    padding: 8px;
+    font-size: small;
+  }
+  .content {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .box_fad {
     width: 60px;
     height: 60px;
   }
-  .box_fad svg{
-width: 35px;
+  .box_fad svg {
+    width: 35px;
   }
-  .translate_select{
-  min-width: 50px;
-  padding: 8px 5px;
-  font-size: small;
-  font-weight: 500;
-  
-}
+  .translate_select {
+    min-width: 50px;
+    padding: 8px 5px;
+    font-size: small;
+    font-weight: 500;
+  }
 }

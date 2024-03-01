@@ -15,6 +15,7 @@ import { REST } from "@/constants/enpoint";
 
 import { LoadingButton } from "@mui/lab";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 export default function Popular_car() {
   const { dispatch } = useContext(carContext);
@@ -32,6 +33,7 @@ export default function Popular_car() {
   async function getData() {
     try {
       setIsLoading(true);
+      
       const res = await request.get(`${REST.CARS}cars/1?page=${page}`);
       setPopular(res?.data);
       setIsLoading(false);
@@ -61,16 +63,24 @@ export default function Popular_car() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
-        {isLoading ? (
-          <Loading />
-        ) : (
+        { (
           popular.map((e) => (
             <li
               key={e.id}
-              style={{
-                backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
-              }}
+              style={
+                {
+                  backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
+                }
+              }
             >
+              {/* <div className="bg_img" style={{objectFit:"cover"}}>
+                <Image
+                  src={`https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id}`}
+                  width={300}
+                  height={400}
+                  alt="car"
+                />
+              </div> */}
               <div className="head_card">
                 <p>{e?.brand}</p>
 

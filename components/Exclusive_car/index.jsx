@@ -54,9 +54,7 @@ export default function Exclusive_car() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
-        {isLoading ? (
-          <Loading />
-        ) : (
+        { (
           popular.map((e) => (
             <li
               key={e.id}
