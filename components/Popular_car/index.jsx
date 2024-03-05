@@ -45,6 +45,16 @@ export default function Popular_car() {
     }
   }
 
+  const handleButton =()=>{
+  setIsLoading(true)
+     dispatch({
+       type: "add-to-cart",
+       payload: e?.image[0]?.id,
+       products: popular,
+     });
+     
+  }
+
   const handlePage = async () => {
     setPage(1);
     setIsLoading(true);
@@ -93,18 +103,13 @@ export default function Popular_car() {
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <LoadingButton
-                    loading={loading}
+                    loading={isLoading}
                     loadingIndicator={
                       <CircularProgress color="secondary" size={20} />
                     }
                     loadingPosition="end"
-                    onClick={() =>
-                      dispatch({
-                        type: "add-to-cart",
-                        payload: e?.image[0]?.id,
-                        products: popular,
-                      })
-                    }
+                    onClick={handleButton}
+                   
                     type="submit"
                     variant="contained"
                     style={{ background: "#FEC31D" }}
@@ -120,7 +125,7 @@ export default function Popular_car() {
       <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
-        loading={isLoading}
+        // loading={isLoading}
         loadingIndicator={<CircularProgress color="secondary" size={20} />}
         loadingPosition="end"
         type="submit"

@@ -19,7 +19,7 @@ export default function Small_car() {
   const [popular, setPopular] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const{t}=useTranslation()
+  const { t } = useTranslation();
 
   useEffect(() => {
     getData();
@@ -38,14 +38,22 @@ export default function Small_car() {
       setIsLoading(false);
     }
   }
-
+const handleButton=()=>{
+  setIsLoading(true)
+   dispatch({
+     type: "add-to-cart",
+     payload: e?.id,
+     products: popular,
+     // navigate:navigate
+   });
+}
   const handlePage = async () => {
     setPage(1);
     setIsLoading(true);
     try {
       const res = await request.get(`${REST.CARS}cars/3?page=${page + 1}`);
       setPopular(res?.data);
-      setPage(prevPage => prevPage + 1);
+      setPage((prevPage) => prevPage + 1);
     } catch (err) {
       // toast.error(err?.message);
       console.log(err);
@@ -57,67 +65,55 @@ export default function Small_car() {
   return (
     <div className="card_cars">
       <ul className="popular_car">
-        { (
-          popular.map((e) => (
-            <li
-              key={e.id}
-              style={{
-                backgroundImage:`url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
-              }}
-            >
-          
-              <div className="head_card">
-                <p>{e?.brand}</p>
-                {console.log()}
-                <CustomizedRating />
-              </div>
-              <div className="food_card">
-                <p>
-                  AED{e?.price_arab}/ <span>day</span>
-                </p>
-                <Link href={`order/${e?.id}`}>
-                  {" "}
-                  <Button
-                      loading={isLoading}
-                      loadingIndicator={
-                        <CircularProgress color="secondary" size={20} />
-                      }
-                      loadingPosition="end"
-                    onClick={() =>
-                      dispatch({
-                        type: "add-to-cart",
-                        payload: e?.id,
-                        products: popular,
-                        // navigate:navigate
-                      })
-                    }
-                    type="submit"
-                    variant="contained"
-                    style={{ background: "#FEC31D" }}
-                  >
-                    Rent Now
-                  </Button>
-                </Link>
-              </div>
-            </li>
-          ))
-        )}
+        {popular.map((e) => (
+          <li
+            key={e.id}
+            style={{
+              backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
+            }}
+          >
+            <div className="head_card">
+              <p>{e?.brand}</p>
+              {console.log()}
+              <CustomizedRating />
+            </div>
+            <div className="food_card">
+              <p>
+                AED{e?.price_arab}/ <span>day</span>
+              </p>
+              <Link href={`order/${e?.id}`}>
+                {" "}
+                <Button
+                  loading={isLoading}
+                  loadingIndicator={
+                    <CircularProgress color="secondary" size={20} />
+                  }
+                  loadingPosition="end"
+                  onClick={handleButton}
+                  type="submit"
+                  variant="contained"
+                  style={{ background: "#FEC31D" }}
+                >
+                  Rent Now
+                </Button>
+              </Link>
+            </div>
+          </li>
+        ))}
       </ul>
       <CustomSwiper popular={popular} loading={isLoading} />
 
       <Button
-          loading={isLoading}
-          loadingIndicator={
-            <CircularProgress color="secondary" size={20} />
-          }
-          loadingPosition="end"
+        loading={isLoading}
+        loadingIndicator={<CircularProgress color="secondary" size={20} />}
+        loadingPosition="end"
         type="submit"
         className="btn"
         variant="text"
         onClick={handlePage}
         style={{ backgroundColor: "var(--white)", color: "" }}
       >
-         {t('car_button')}
+        {t("car_button")}
       </Button>
     </div>
   );
