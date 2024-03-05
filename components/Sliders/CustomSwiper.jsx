@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useContext, useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,11 +25,21 @@ import { Carousel } from "react-responsive-carousel";
 export default function CustomSwiper({ popular, loading }) {
   const { dispatch } = useContext(carContext);
   const { t } = useTranslation();
-
+const [isLoading, setIsLoading] = useState(false);
   // useEffect(() => {
   //   const swiper = new Swiper("mySwiper", {});
   //   swiper.update();
   // }, []);
+
+  const handleButton=()=>{
+    setIsLoading(true)
+     dispatch({
+       type: "add-to-cart",
+       payload: e?.id,
+       products: popular,
+     });
+  }
+
   return (
     <>
       {loading ? (
@@ -37,15 +49,13 @@ export default function CustomSwiper({ popular, loading }) {
           showArrows={true}
           infiniteLoop={true}
           dynamicHeight={true}
-        
           showIndicators={false}
           modules={[EffectCoverflow]}
           className="mySwiper"
-         
         >
           {popular.map((e) => (
             <li
-            className="li_carousel"
+              className="li_carousel"
               key={e.id}
               style={{
                 backgroundImage: `url(https://backend.intechs.uz/car/v1/image/${e?.image[0]?.id})`,
@@ -63,18 +73,12 @@ export default function CustomSwiper({ popular, loading }) {
                 <Link href={`order/${e?.id}`}>
                   {" "}
                   <Button
-                    loading={loading}
+                    loading={isLoading}
                     loadingIndicator={
                       <CircularProgress color="secondary" size={20} />
                     }
                     loadingPosition="end"
-                    onClick={() =>
-                      dispatch({
-                        type: "add-to-cart",
-                        payload: e?.id,
-                        products: popular,
-                      })
-                    }
+                    onClick={handleButton}
                     type="submit"
                     variant="contained"
                     style={{ background: "#FEC31D" }}
